@@ -1,0 +1,1784 @@
+body {
+	background: url("https://myrusakov.ru/images/bg.png") repeat;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 100%;
+	margin: 0;
+	padding: 0;
+}
+
+a img {
+	border: none;
+}
+
+.clear {
+	clear: both;
+}
+
+.center {
+	text-align: center;
+}
+
+.right {
+	text-align: right;
+}
+
+.red {
+	color: #c8504b;
+}
+
+.green {
+	color: #090;
+}
+
+.message {
+	color: #c00 !important;
+	text-align: center;
+}
+
+input {
+	outline: none;
+}
+
+label {
+	cursor: pointer;
+}
+
+#container {
+	width: 100%;
+	min-width: 360px;
+}
+
+header {
+	background: url("https://myrusakov.ru/images/bg_top.png") repeat #096e98;
+	border-bottom: 1px solid #06435e;
+	padding: 12px 20px 9px;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-pack: justify;
+	-ms-flex-pack: justify;
+	justify-content: space-between;
+	-ms-flex-wrap: wrap;
+	flex-wrap: wrap;
+}
+
+header h2 {
+	color: #fff;
+	font-size: 210%;
+	margin: 0;
+}
+
+#topmenu {
+	padding: 0;
+	list-style: none;
+	margin: 3px 0 0;
+}
+
+#topmenu li {
+	float: left;
+}
+
+#topmenu a {
+	color: #fdfeff;
+	display: block;
+	padding: 9px 15px 7px;
+	text-decoration: none;
+}
+
+#topmenu li {
+	background: url("https://myrusakov.ru/images/bg_item.png") no-repeat right center;
+}
+
+#topmenu a:hover, #topmenu a.active {
+	background-color: #086d97;
+	border: 1px solid #06445e;
+	border-radius: 5px;
+	padding: 8px 14px 6px;
+}
+
+#top {
+	background-color: #d5d5d5;
+	border-bottom: 1px solid #6f7a80;
+	box-shadow: 0 4px 4px #717c82;
+	height: 34px;
+	padding: 0 20px;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-pack: justify;
+	-ms-flex-pack: justify;
+	justify-content: space-between;
+	-ms-flex-wrap: wrap;
+	flex-wrap: wrap;
+}
+
+#top .clear {
+	display: none;
+}
+
+#search {
+	margin-top: 2px;
+}
+
+#search table {
+	border-collapse: collapse;
+}
+
+#search input[type="text"] {
+	background-color: #f7f7f7;
+	border: none;
+	border-radius: 5px 0 0 5px;
+	color: #23252b;
+	height: 22px;
+	padding: 0 0 0 5px;
+	width: 263px;
+}
+
+#search input[type="submit"], #search_forum input[type="submit"] {
+	background: url("https://myrusakov.ru/images/icon_search.png") no-repeat center center;
+	border: none;
+	cursor: pointer;
+	height: 22px;
+	margin: 3px 0 3px -4px;
+	width: 31px;
+}
+
+#auth {
+
+}
+
+#auth table {
+	border-collapse: collapse;
+}
+
+#auth .message {
+	float: left;
+	margin-right: 5px;
+}
+
+#auth form {
+}
+
+#auth input[type="text"], #auth input[type="password"] {
+	border: 1px solid #9c9c9c;
+	border-radius: 5px;
+	height: 18px;
+	padding: 0 3px;
+	margin-top: -1px;
+	width: 88px;
+}
+
+#auth input[type="submit"] {
+	background: url("https://myrusakov.ru/images/icon_auth.png") no-repeat left 40%;
+	border: none;
+	color: #8ab71b;
+	cursor: pointer;
+	font-size: 100%;
+	margin-left: 10px;
+	padding-left: 15px;
+}
+
+#auth img {
+	margin: 3px 10px 0;
+}
+
+#icon_register {
+	margin: 2px 5px 0 0 !important;
+}
+
+#link_register {
+	color: #c8504b;
+	margin-top: 1px;
+	text-decoration: none;
+}
+
+#link_register:hover, #links_reset a:hover {
+	text-decoration: underline;
+}
+
+#links_reset {
+	margin-top: -3px;
+}
+
+#links_reset a {
+	color: #606060;
+	display: block;
+	font-size: 75%;
+	text-decoration: none;
+}
+
+#slider {
+	background: url("https://myrusakov.ru/images/bg_slider.png") repeat;
+	border-bottom: 4px solid #fff;
+	margin-top: 5px;
+	padding: 20px 0;
+}
+
+#course {
+	margin: 0 auto;
+	max-width: 850px;
+	width: calc(100% - 30px);
+}
+
+#course h2 {
+	font-weight: normal;
+	margin: 0 0 10px;
+}
+
+#course p {
+	margin: 0;
+}
+
+#course div {
+	background-color: rgba(176, 204, 216, 0.5);
+	border-radius: 10px;
+	display: table-cell;
+	padding: 15px;
+	max-width: 500px;
+	width: 100%;
+}
+
+#course img {
+	float: left;
+	margin-right: 20px;
+	max-width: 300px;
+	width: 100%;
+}
+
+#course .more {
+	background-color: #8ab71b;
+	border-radius: 10px 2px 10px 2px;
+	color: #f4f8ed;
+	display: block;
+	float: right;
+	margin-bottom: -15px;
+	margin-right: -15px;
+	padding: 5px 10px;
+	text-decoration: none;
+}
+
+#course .more:hover {
+	border-radius: 5px 0 5px 0;
+}
+
+#content {
+	margin: 20px 10px;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-ms-flex-wrap: wrap;
+	flex-wrap: wrap;
+	-webkit-box-pack: justify;
+	-ms-flex-pack: justify;
+	justify-content: space-between;
+}
+
+#content > .clear {
+	display: none;
+}
+
+.block {
+	box-shadow: 4px 5px 5px #dddcdd;
+	margin-bottom: 20px;
+	width: 220px;
+}
+
+.block .header, #forum .header {
+	background: url("https://myrusakov.ru/images/bg_block_top.png") repeat-x #096e98;
+	color: #fff;
+	border-radius: 10px 10px 0 0;
+	font-size: 120%;
+	padding: 7px 10px 6px;
+}
+
+#forum .header a {
+	color: #fff;
+}
+
+.block .content {
+	background-color: #e8f3f8;
+	border-bottom: 2px solid #fff;
+	border-left: 2px solid #fff;
+	border-radius: 0 0 5px 5px;
+	border-right: 2px solid #fff;
+	padding: 10px 0px;
+}
+
+.block nav div div {
+	background: url("https://myrusakov.ru/images/menu_sep.png") no-repeat center bottom;
+	display: none;
+	padding-left: 20px;
+}
+
+.block nav > div > a:only-of-type {
+	background: url("https://myrusakov.ru/images/menu_sep.png") no-repeat center bottom, url("https://myrusakov.ru/images/arrow_menu.png") no-repeat 8px center;
+}
+
+.block nav a {
+	background: url("https://myrusakov.ru/images/arrow_menu.png") no-repeat 8px center;
+	color: #444953;
+	display: block;
+	padding: 10px 0 10px 20px;
+	text-decoration: none;
+}
+
+.block nav div:last-child a {
+	background: url("https://myrusakov.ru/images/arrow_menu.png") no-repeat 8px center;
+}
+
+.block nav a.active ~ div {
+	display: block;
+}
+
+.block nav div a:hover, .block nav div a.active {
+	background: url("https://myrusakov.ru/images/arrow_menu_active.png") no-repeat 8px center #d3d3d3;
+	border-left: 2px solid #c8504b;
+}
+
+.block .content > div {
+	padding: 0 10px;
+}
+
+.block p {
+	color: #61676f;
+	font-size: 95%;
+	margin: 0 0 10px;
+}
+
+.block .button, #comments input[type="button"] {
+	border-radius: 8px;
+	color: #fff;
+	cursor: pointer;
+	display: inline-block;
+	padding: 3px 15px;
+	text-decoration: none;
+}
+
+.block .button:hover, #comments input[type="button"]:hover {
+	border-radius: 5px;
+}
+
+.block #subscribe_vk img {
+	float: left;
+}
+
+.block #subscribe .button, .block #poll .button, #comments input[type="button"] {
+	background-color: #f0b017;
+	border-bottom: 2px solid #976c05;
+	border-left: 1px solid #976c05;
+	border-right: 1px solid #976c05;
+	border-top: 1px solid #976c05;
+}
+
+.block #subscribe .button {
+	margin: 8px 0 0 15px;
+}
+
+.block #vk .button {
+	background-color: #567ca1;
+	border-bottom: 2px solid #2c567e;
+	margin: -3px 0 5px 15px;
+}
+
+.block #vk .button:last-child {
+	margin-left: 19px;
+}
+
+.block .free .button {
+	background-color: #8ab71b;
+	border-bottom: 2px solid #628903;
+	border-left: 1px solid #71980f;
+	border-right: 1px solid #71980f;
+	border-top: 1px solid #71980f;
+	font-size: 90%;
+}
+
+#subscribe_vk_sep {
+	float: none !important;
+	margin: 15px 0 10px;
+}
+
+.block #poll div {
+	margin: 10px 0;
+}
+
+.block #poll form {
+	margin-left: 5px;
+}
+
+.block #poll input[type="radio"], .form .radio input[type="radio"] {
+	display: none;
+}
+
+.block #poll label, .form .radio label {
+	background: url("https://myrusakov.ru/images/radio.png") no-repeat left center;
+	display: inline-block;
+	padding-left: 20px;
+}
+
+.block #poll input[type="radio"]:checked + label, .form .radio input[type="radio"]:checked + label {
+	background: url("https://myrusakov.ru/images/radio_checked.png") no-repeat left center;
+}
+
+.block #poll .button {
+	font-size: 100%;
+}
+
+#left {
+	-webkit-box-ordinal-group: 2;
+	-ms-flex-order: 1;
+	order: 1;
+	-ms-flex-preferred-size: 220px;
+	flex-basis: 220px;
+}
+
+#right {
+	-webkit-box-ordinal-group: 4;
+	-ms-flex-order: 3;
+	order: 3;
+	-ms-flex-preferred-size: 220px;
+	flex-basis: 220px;
+}
+
+#center {
+	-webkit-box-ordinal-group: 3;
+	-ms-flex-order: 2;
+	order: 2;
+	-ms-flex-preferred-size: calc(100% - 460px);
+	flex-basis: calc(100% - 460px);
+}
+
+.block .free img {
+	width: 100%;
+}
+
+.block .free p {
+	font-size: 90%;
+	margin: 5px 0;
+}
+
+.block .free p.title {
+	font-size: 100%;
+	text-align: center;
+}
+
+.block .free input[type="text"] {
+	background-color: #e9e9e9;
+	border: 1px solid #a9b4bb;
+	border-radius: 5px;
+	height: 20px;
+	padding: 0 5px;
+	width: 123px;
+}
+
+.block .free input[type="text"]:focus {
+	border-color: #ee4e10;
+}
+
+.block .free label {
+	color: #444953;
+	font-size: 90%;
+}
+
+.block .free td {
+	padding: 5px 2px;
+}
+
+.block .free a {
+	margin-top: 5px;
+}
+
+.block #quote {
+	margin-bottom: -5px;
+}
+
+.block #quote p {
+	font-size: 80%;
+	margin-bottom: 5px;
+}
+
+.main {
+	background: linear-gradient(180deg, #fff, #e6e6e6);
+	border: 2px solid #fff;
+	border-radius: 5px;
+	margin-bottom: 20px;
+	padding: 15px;
+	overflow: hidden;
+}
+
+.main h1, .main h2 {
+	color: #444953;
+	font-weight: normal;
+}
+
+.main h1, .main .h1 {
+	border-left: 2px solid #2aa1d3;
+	font-size: 170%;
+	padding-left: 5px;
+}
+
+.main .article_img {
+	float: left;
+	margin-bottom: 10px;
+	margin-right: 15px;
+	max-width: 230px;
+	width: 100%;
+}
+
+.main .article_img img {
+	border: 2px solid #fff;
+	box-shadow: 4px 5px 3px #545454;
+	width: 100%;
+}
+
+.main p, .main .text {
+	color: #444953;
+	margin: 10px 0;
+}
+
+.main p {
+	text-indent: 10px;
+}
+
+.main a {
+	color: #006699;
+	text-decoration: none;
+}
+
+.main a:hover {
+	text-decoration: underline;
+}
+
+section {
+	margin-bottom: 30px;
+}
+
+.date_img {
+	border: none !important;
+	box-shadow: none !important;
+	height: 52px;
+	width: 52px !important;
+}
+
+.date_text {
+	color: #fff;
+	font-size: 90%;
+	margin-top: -49px;
+	text-align: center;
+	width: 52px;
+}
+
+.article_img > div {
+	margin-top: -45px;
+	margin-left: -15px;
+}
+
+.main h2 {
+	margin: 5px 0;
+}
+
+.main .more {
+	background: url("https://myrusakov.ru/images/arrow_more.png") no-repeat 97% center #f0b017;
+	border: 1px solid #976c05;
+	border-radius: 3px;
+	color: #fefaf4;
+	display: block;
+	float: right;
+	padding: 2px 20px 2px 5px;
+}
+
+.main .more:hover {
+	border-radius: 0;
+	text-decoration: none !important;
+}
+
+.article_info {
+	background-color: #b1cad5;
+	font-size: 90%;
+	margin: 10px -15px 0;
+	padding: 3px 0;
+}
+
+.article_info ul {
+	margin: 0;
+	padding: 0;
+}
+
+.article_info li {
+	float: left;
+	padding: 0 20px 0 0;
+}
+
+.article_info li:first-child {
+	list-style: none;
+	margin-left: 10px;
+}
+
+.article_info li:last-child {
+	margin-right: 20px;
+}
+
+#pagination {
+	margin-top: 20px;
+	text-align: center;
+}
+
+#pagination .active {
+	color: #2aa1d3;
+	font-weight: bold;
+}
+
+#pagination span, #pagination a {
+	display: inline-block;
+	margin: 0 5px;
+}
+
+footer {
+	background: url("https://myrusakov.ru/images/bg_footer.png") repeat-x #096e98;
+	border-bottom: 1px solid #05435e;
+	color: #fff;
+	padding: 5px 0;
+	text-align: center;
+}
+
+footer .sep {
+	border-top: 1px dashed #033246;
+	height: 8px;
+	margin: 0 auto;
+	width: 99%;
+}
+
+footer p {
+	font-size: 95%;
+	margin: 0;
+}
+
+.category_item {
+	border-bottom: 1px solid #c7c8c9;
+	font-size: 120%;
+	padding: 5px 15px;
+	margin: 0 -15px;
+}
+
+.category_item:last-child {
+	border: none;
+}
+
+.category_item:hover {
+	background-color: #c3dbe6;
+}
+
+.category_item a {
+	color: #2aa1d3;
+}
+
+.category_item div:first-child {
+	float: left;
+}
+
+.category_author {
+	color: #444953;
+	float: right;
+}
+
+.main article .article_img {
+	float: none;
+	text-align: center;
+	margin: auto;
+}
+
+.code {
+	background-color: #dadada;
+	border-left: 3px solid #2aa1d3;
+	display: block;
+	padding: 5px;
+}
+
+.article_info div {
+	float: inherit;
+	margin-right: 5px;
+	margin-top: 1px;
+}
+
+#article_pn, #article_copy {
+	padding-top: 20px;
+}
+
+.main #next_article, .main #prev_article {
+	border: 1px solid #976c05;
+	border-bottom-width: 2px;
+	border-radius: 5px;
+	color: #fff;
+	display: block;
+	padding-bottom: 2px;
+	padding-top: 2px;
+}
+
+.main #next_article {
+	background: url("https://myrusakov.ru/images/next_article.png") no-repeat 96% center #f0b017;
+	float: right;
+	padding-left: 15px;
+	padding-right: 25px;
+}
+
+.main #prev_article {
+	background: url("https://myrusakov.ru/images/prev_article.png") no-repeat 4% center #f0b017;
+	float: left;
+	padding-left: 25px;
+	padding-right: 15px;
+}
+
+.main #next_article:hover, .main #prev_article:hover {
+	border-radius: 3px;
+	text-decoration: none !important;
+}
+
+#article_copy a {
+	color: #41a8d6;
+}
+
+#article_vk {
+	border: 1px dashed #444953;
+	font-size: 120%;
+	display: table;
+	margin: 20px auto 10px;
+	padding: 10px;
+	text-align: center;
+}
+
+#share {
+	font-weight: bold;
+	margin: 20px 0;
+}
+
+#share .ya-share2__container_size_m .ya-share2__icon {
+	background-size: auto;
+	height: 35px;
+	width: 35px;
+}
+
+#share .ya-share2__container_size_m .ya-share2__counter {
+	font-size: 20px;
+}
+
+#recom {
+	color: #444953;
+}
+
+#recom textarea {
+	border: 1px solid #8c8f95;
+	padding: 5px;
+}
+
+#recom p {
+	text-indent: 0;
+}
+
+#comments .comment {
+	border-top: 1px solid #bec0c3;
+	padding-top: 10px;
+	margin-top: 20px;
+}
+
+#comments .comment .text {
+	overflow-wrap: break-word;
+	word-wrap: break-word;
+}
+
+#comments .functions {
+	text-align: right;
+}
+
+#comments .functions span {
+	color: #006699;
+	cursor: pointer;
+}
+
+#comments .functions span:hover {
+	text-decoration: underline;
+}
+
+#comment_cancel {
+	text-align: right;
+}
+
+#comment_cancel span {
+	color: #f0b017;
+	cursor: pointer;
+}
+
+#comment_cancel span:hover {
+	color: #c00;
+}
+
+#form_add_comment {
+	display: none;
+}
+
+#form_add_comment .button {
+	float: right;
+}
+
+#comments a {
+	color: #52add7;
+}
+
+#comments img {
+	float: left;
+	margin-right: 10px;
+	width: 100px;
+}
+
+#comments .name {
+	color: #2aa1d3;
+	font-weight: bold;
+}
+
+#comments .date {
+	color: #64686f;
+	float: right;
+}
+
+#comments .comment div {
+	margin-left: 20px;
+}
+
+#comments input[type="button"] {
+	font-size: 100%;
+}
+
+#comments textarea {
+	padding: 5px !important;
+}
+
+.form {
+	display: table;
+	margin: 0 auto;
+}
+
+.form .header {
+	text-align: center;
+}
+
+#left_form .form {
+	margin: 0;
+}
+
+.form label {
+	color: #565a62;
+	display: block;
+	font-size: 90%;
+}
+
+.form input[type="text"], .data input[type="text"], .form input[type="password"], .form textarea, .data textarea, #comments textarea {
+	background-color: #dcdcdc;
+	border: 1px solid #d2d2d2;
+	border-radius: 5px;
+	padding: 0 5px;
+}
+
+.form input[type="text"], .data input[type="text"], .form input[type="password"] {
+	height: 25px;
+	width: 158px;
+}
+
+.form select, .data select {
+	background-color: #dcdcdc;
+}
+
+.form .checkbox label {
+	float: left;
+}
+
+.form div {
+	margin: 15px 0;
+}
+
+.form .wysibb-toolbar, .form .wysibb-text {
+	margin: 0;
+}
+
+.form .wysibb-text {
+	padding: 10px;
+}
+
+.captcha img:first-child {
+	cursor: pointer;
+	display: block;
+	float: left;
+	margin: 20px 5px 0 10px;
+}
+
+.captcha img:last-child {
+	border: 1px solid #c6c6c6;
+}
+
+.form input[type="submit"], #forum_form input[type="submit"] {
+	background-color: #8ab71b;
+	border: 1px solid #71980f;
+	border-radius: 5px;
+	color: #fff;
+	cursor: pointer;
+	font-size: 100%;
+	padding: 2px 15px;
+}
+
+.form input[type="submit"]:hover, #forum_form input[type="submit"]:hover {
+	border-radius: 3px;
+}
+
+#poll_result .poll_result {
+	background-color: #bde1f0;
+	border-radius: 5px;
+	color: #3196c1;
+	float: left;
+	height: 20px;
+	font-weight: bold;
+	padding-top: 2px;
+	text-align: center;
+}
+
+#poll_result .poll_percent {
+	float: right;
+	font-weight: bold;
+}
+
+#poll_result p {
+	text-indent: 0;
+}
+
+#search_result .search_item {
+	margin-bottom: 25px;
+}
+
+#search_result .article_info {
+	font-size: 110%;
+	padding-left: 15px;
+}
+
+#search_result a {
+	color: #2aa1d3;
+}
+
+#search_result .search_text {
+	background-color: #dadada;
+	margin: 0 -15px;
+	padding: 5px 25px;
+}
+
+#search_result .search_text span {
+	color: #c8524d;
+	font-weight: bold;
+}
+
+#forum .sub_header {
+	background: url("https://myrusakov.ru/images/bg_sub_header.png") repeat-x;
+	border-bottom: 1px solid #fff;
+	border-left: 1px solid #fff;
+	border-radius: 0 0 10px 10px;
+	border-right: 1px solid #fff;
+	color: #c8504b;
+	margin-bottom: 10px;
+	padding: 5px 9px;
+}
+
+#forum .avatar {
+	float: left;
+	border: 2px solid #dcdcdc;
+	width: 100px;
+}
+
+#forum #profile_info {
+	margin-left: 120px;
+}
+
+#forum #profile_info h2 {
+	color: #2aa1d3;
+}
+
+#forum #profile_info p {
+	text-indent: 0;
+}
+
+#search_forum {
+	margin-bottom: 20px;
+	width: 100%;
+}
+
+#search_forum td:first-child {
+	width: 100%;
+}
+
+#search_forum input[type="text"] {
+	background-color: #dedede;
+	border: 1px solid #d3d3d3;
+	border-radius: 5px 0 0 5px;
+	color: #23252b;
+	height: 18px;
+	padding-left: 5px;
+	width: 100%;
+}
+
+#forum table {
+	border-collapse: collapse;
+	width: 100%;
+}
+
+#forum tr:first-child td {
+	background: url("https://myrusakov.ru/images/forum_border.png") no-repeat right center;
+	border: none;
+}
+
+#forum tr:first-child td:last-child {
+	background: none;
+	border: none;
+}
+
+#forum td {
+	border: 1px solid #ccced0;
+	padding: 5px 15px;
+}
+
+#forum table tr:first-child {
+	background: url("https://myrusakov.ru/images/bg_sub_header.png") repeat-x;
+	border-bottom: 1px solid #fff;
+	border-left: 1px solid #fff;
+	border-radius: 0 0 10px 10px;
+	border-right: 1px solid #fff;
+	color: #c8504b;
+	margin: 0 -15px 10px;
+	padding: 5px 9px;
+}
+
+#forum .forum_section {
+	margin: 20px -15px 0;
+}
+
+#forum_profile, #forum_thread {
+	margin: 0 -15px;
+}
+
+#forum .forum_section .info {
+	border-left: none;
+}
+
+#forum .forum_section .info img {
+	float: left;
+}
+
+#forum .forum_section .info h2 {
+	margin: -4px 0 0 25px;
+}
+
+#forum .forum_section p {
+	text-indent: 0;
+}
+
+#statistics {
+	padding: 20px 0 15px;
+}
+
+#statistics ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+#statistics img {
+	margin-top: -6px;
+}
+
+#statistics li {
+	border-right: 1px solid #7e8187;
+	float: left;
+	padding: 0 10px;
+}
+
+#statistics li:first-child, #statistics li:last-child {
+	border: none;
+}
+
+#forum .warning {
+	color: #c8504b;
+	font-weight: bold;
+}
+
+#forum_form label {
+	color: #444953;
+	display: block;
+	margin-bottom: 5px;
+}
+
+#forum_form input[type="text"] {
+	background-color: #dcdcdc;
+	border: 1px solid #d2d2d2;
+	border-radius: 5px;
+	height: 25px;
+	padding: 0 5px;
+	width: 99%;
+}
+
+#forum_form textarea {
+	background-color: #dedede;
+	border: 1px solid #a6a7a7;
+	border-radius: 5px;
+	padding: 5px;
+	width: 99%;
+}
+
+#forum_form div {
+	margin: 15px 0;
+}
+
+#forum_form p {
+	text-indent: 0;
+}
+
+#forum_form input[type="checkbox"] {
+	float: left;
+	margin-right: 5px;
+}
+
+#forum_functions {
+	margin-bottom: 10px;
+}
+
+#add_thread, #forum .button_profile, #forum .add_post, #forum .edit_post, #forum .delete_post {
+	border-radius: 5px;
+	color: #fff;
+	display: inline-block;
+	padding: 5px 15px 5px 25px;
+}
+
+#add_thread, #forum .button_profile {
+	background: url("https://myrusakov.ru/images/icon_add.png") no-repeat 5% center #f0b017;
+	border: 1px solid #976c05;
+	margin-right: 10px;
+}
+
+#add_thread, #forum .button_profile {
+	background-image: url("https://myrusakov.ru/images/icon_profile.png");
+}
+
+#forum .add_post, #forum .edit_post, #forum .delete_post {
+	background: url("https://myrusakov.ru/images/icon_reply.png") no-repeat 5% center #8ab71b;
+	border: 1px solid #71980f;
+}
+
+#add_thread:hover, #forum .button_profile:hover, #forum .add_post:hover, #forum .edit_post:hover, #forum .delete_post:hover {
+	text-decoration: none;
+}
+
+#add_thread:hover, #forum .button_profile:hover {
+	background-color: #d39502;
+}
+
+#forum .add_post:hover, #forum .edit_post:hover, #forum .delete_post:hover {
+	background-color: #688e0a;
+}
+
+#forum .post {
+	padding: 0 10px;
+}
+
+#forum .post .sub_header {
+	color: #63666e;
+	margin: 0 -10px 10px;
+}
+
+#forum .post .sub_header span {
+	float: right;
+}
+
+#forum .post .name {
+	color: #2aa1d3;
+	font-weight: bold;
+	font-size: 130%;
+}
+
+#forum .post_left {
+	float: left;
+	width: 140px;
+}
+
+#forum .post_left p {
+	font-size: 80%;
+	text-indent: 0;
+}
+
+#forum .post_right {
+	margin-left: 140px;
+}
+
+#forum .post .add_post, #forum .post .edit_post, #forum .post .delete_post {
+	float: right;
+	margin-left: 5px;
+}
+
+#forum .post_bottom {
+	background-color: #bed7e2;
+	border-bottom: 2px solid #2aa1d3;
+	margin: 10px -5px 0;
+	padding: 1px 0 0;
+}
+
+#forum .post_bottom .button_profile {
+	margin-right: 4px;
+}
+
+#list_tests p {
+	text-indent: 0;
+}
+
+#list_tests ul {
+	color: #567ca1;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+#list_tests .test_description {
+	font-style: italic;
+}
+
+#list_tests .test_link {
+	text-align: right;
+}
+
+#test_result ol ul {
+	padding: 0;
+	list-style: none;
+}
+
+#test_result ol ul li {
+	margin: 10px 0;
+}
+
+#test_result ol ul li textarea {
+	margin-bottom: 20px;
+}
+
+#test_result #result td, .correct td, .incorrect td {
+	padding: 5px;
+}
+
+#test_result #result td:last-child {
+	text-align: center;
+}
+
+.correct, .incorrect {
+	margin: 10px 0;
+}
+
+.correct {
+	color: #080;
+}
+
+.incorrect {
+	color: #c00;
+}
+
+.avatar_info {
+	text-align: center;
+}
+
+.data {
+	border-collapse: collapse;
+	width: 100%;
+}
+
+.data .header {
+	font-weight: bold;
+}
+
+.data .edit {
+	cursor: pointer;
+}
+
+.data td {
+	border: 1px solid #096e98;
+	padding: 5px;
+	text-align: center;
+}
+
+.data img {
+	max-width: 100px;
+}
+
+.data .invert {
+	cursor: pointer;
+}
+
+.big_avatar {
+	width: 150px;
+}
+
+.array_checkbox {
+	border-collapse: collapse;
+}
+
+#parent_popup {
+	background: url("https://myrusakov.ru/images/popup_bg.png") repeat;
+	display: none;
+	height: 100%;
+	position: fixed;
+	width: 100%;
+	z-index: 100;
+}
+
+#popup_book {
+	height: 343px;
+	margin: 100px auto 0;
+	padding-top: 28px;
+	width: 778px;
+}
+
+#popup_book {
+	background: url("https://myrusakov.ru/images/popup_book.png") no-repeat;
+}
+
+#popup_close {
+	margin: -43px -11px 0 0;
+	text-align: right;
+}
+
+#popup_close, #popup_info, #popup_book h1 {
+	padding-left: 237px;
+}
+
+#popup_close img {
+	cursor: pointer;
+}
+
+#popup_book h1 {
+	font-size: 150%;
+	margin: 0;
+	text-align: center;
+}
+
+#popup_book ul {
+	font-size: 125%;
+	line-height: 134%;
+	list-style-image: url("https://myrusakov.ru/images/popup_item.jpg");
+	margin-top: 15px;
+	padding-left: 282px;
+}
+
+#popup_book ul {
+	margin-bottom: 6px;
+	margin-top: 6px;
+}
+
+.popup_input {
+	background: url("https://myrusakov.ru/images/popup_input_bg.jpg") repeat-x top left;
+	border: none;
+	color: #6d6d6d;
+	font-size: 110%;
+	outline: none;
+	padding: 0;
+	width: 170px;
+}
+
+#popup_table {
+	margin-left: 237px;
+	margin-top: -5px;
+	width: 65%;
+}
+
+#popup_book #popup_table {
+	margin-left: 272px;
+}
+
+#popup_input_left_name, .popup_input, #popup_input_left_email, #popup_input_right {
+	height: 44px;
+}
+
+#popup_input_left_name {
+	background: url("https://myrusakov.ru/images/popup_input_left_name.jpg") no-repeat;
+	width: 39px;
+}
+
+#popup_input_left_email {
+	background: url("https://myrusakov.ru/images/popup_input_left_email.jpg") no-repeat;
+	width: 46px;
+}
+
+#popup_input_right {
+	background: url("https://myrusakov.ru/images/popup_input_right.jpg") no-repeat;
+	width: 6px;
+}
+
+#popup_button, #popup_book_button {
+	padding: 10px 0;
+	text-align: center;
+}
+
+#popup_button input, #popup_book_button input {
+	background: url("https://myrusakov.ru/images/popup_button.jpg") no-repeat;
+	border: none;
+	cursor: pointer;
+	height: 49px;
+	width: 264px;
+}
+
+#popup_button input:hover {
+	background: url("https://myrusakov.ru/images/popup_button_active.jpg") no-repeat;
+}
+
+#popup_book #popup_button input {
+	background: url("https://myrusakov.ru/images/popup_button_book.jpg") no-repeat;
+	height: 48px;
+	width: 202px;
+}
+
+#popup_book #popup_button input:hover {
+	background: url("https://myrusakov.ru/images/popup_button_book_active.jpg") no-repeat;
+}
+
+#popup_info {
+	margin-left: 20px;
+	margin-top: 0;
+}
+
+#popup_info img {
+	margin-top: 2px;
+}
+
+#popup_info p {
+	font-size: 110%;
+	font-weight: bold;
+	margin: 0;
+	text-indent: 2px;
+}
+
+.table_colors {
+	margin: 0 auto;
+}
+
+.table_colors td {
+	border: 1px solid #000;
+	padding: 8px;
+}
+
+#test_result ol > li > ul > li > table {
+	width: 100% !important;
+	max-width: 468px;
+}
+
+@media screen and (max-width: 1280px) {
+	.data {
+		font-size: 78%;
+	}
+	
+	.data td {
+		padding: 0;
+	}
+}
+
+@media screen and (max-width: 1200px) {
+	
+	body {
+		font-size: 84%;
+	}
+	
+	#topmenu a {
+		padding: 9px 8px 7px;
+	}
+	
+	#topmenu a:hover, #topmenu a.active {
+		padding: 8px 7px 6px;
+	}
+	
+	#forum td {
+		border: 1px solid #ccced0;
+		padding: 2px;
+	}
+	
+	#auth .message {
+		font-size: 70%;
+		margin-top: 5px;
+	}
+
+}
+
+@media screen and (max-width: 980px) {
+
+	#center {
+		-ms-flex-preferred-size: calc(100% - 230px);
+		flex-basis: calc(100% - 230px);
+	}
+
+	#right {
+		-ms-flex-preferred-size: 100%;
+		flex-basis: 100%;
+		-webkit-box-flex: 1;
+		-ms-flex-positive: 1;
+		flex-grow: 1;
+	}
+
+	#right .block {
+		width: 100%;
+	}
+
+	.block .free img {
+		max-width: 320px;
+		width: 100%;
+		margin: 15px auto;
+		display: block;
+	}
+
+	.block .free table {
+		width: 200px;
+		margin: 0 auto;
+	}
+
+	#comments img {
+		float: none;
+		margin: 10px auto;
+		display: block;
+	}
+
+	#comments .date {
+		float: none;
+	}
+
+}
+
+@media screen and (max-width: 880px) {
+
+	header {
+		-webkit-box-orient: vertical;
+		-webkit-box-direction: normal;
+		-ms-flex-direction: column;
+		flex-direction: column;
+		-webkit-box-align: center;
+		-ms-flex-align: center;
+		align-items: center;
+		background: #549cce;
+	}
+
+	#top {
+		-webkit-box-orient: vertical;
+		-webkit-box-direction: normal;
+		-ms-flex-direction: column;
+		flex-direction: column;
+		height: auto;
+		-webkit-box-align: center;
+		-ms-flex-align: center;
+		align-items: center;
+	}
+
+}
+
+@media screen and (max-width: 768px) {
+	
+	#topmenu a:hover, #topmenu a.active {
+		padding: 8px 10px 6px;
+	}
+	
+	#search input[type="text"] {
+		width: 140px;
+	}
+	
+	#auth form {
+		margin-top: -1px;
+	}
+	
+	#auth input[type="text"], #auth input[type="password"] {
+		width: 78px;
+	}
+	
+	#icon_register {
+		margin-top: 4px !important;
+	}
+	
+	#link_register {
+		margin-top: 3px !important;
+	}
+	
+	#slider #course {
+		min-width: 0;
+		width: 95%;
+	}
+	
+	#center {
+		margin-right: 0;
+	}
+
+	#center {
+		-ms-flex-preferred-size: 100%;
+		flex-basis: 100%;
+		-webkit-box-ordinal-group: 2;
+		-ms-flex-order: 1;
+		order: 1;
+	}
+
+	#left {
+		-webkit-box-ordinal-group: 3;
+		-ms-flex-order: 2;
+		order: 2;
+		-webkit-box-flex: 1;
+		-ms-flex-positive: 1;
+		flex-grow: 1;
+	}
+
+	#left .block {
+		width: 100%;
+	}
+
+	.block nav > div > a:only-of-type {
+		background-position: left bottom, 8px center;
+	}
+
+	.block nav > div div {
+		background-position: left bottom;
+	}
+
+	.block nav div a:hover, .block nav div a.active {
+		background-position: 8px center;
+	}
+
+	.block nav div:last-child a {
+		background-position: 8px center;
+	}
+
+	
+}
+
+@media screen and (max-width: 680px) {
+
+	#course img {
+		float: none;
+		margin: 15px auto;
+		display: block;
+		max-width: 100%;
+		width: auto;
+	}
+
+	#course div {
+		max-width: 100%;
+	}
+
+}
+
+@media screen and (max-width: 600px) {
+	
+	#topmenu a:hover, #topmenu a.active {
+		padding: 8px 5px 6px;
+	}
+	
+	#search table {
+		margin: 0 auto;
+	}
+	
+	#auth input[type="text"], #auth input[type="password"] {
+		width: 95px;
+	}
+	
+	#slider #course {
+		text-align: center;
+	}
+	
+	#slider #course img {
+		float: none;
+	}
+	
+	.main .article_img {
+		float: none;
+		margin: 15px auto 30px;
+		text-align: center;
+	}
+	
+	.date_text {
+		margin-top: -47px;
+	}
+	
+	.date_img {
+		margin-left: -190px;
+	}
+	
+	.main h2 {
+		margin-top: 10px;
+		text-align: center;
+	}
+	
+	.article_info li:nth-child(3) {
+		float: none;
+	}
+	
+	.article_info li:nth-child(4) {
+		margin-left: 8px;
+	}
+	
+}
+
+@media screen and (max-width: 580px) {
+
+	#top {
+		padding: 10px;
+	}
+
+	#auth {
+		margin-top: 10px;
+	}
+
+	#auth table {
+		display: block;
+	}
+
+	#auth table tr {
+		display: block;
+	}
+
+	#auth table tr td {
+		display: block;
+	}
+
+	#auth table tr td:nth-child(2), #auth table tr td:nth-child(3), #auth table tr td:nth-child(5) {
+		display: none;
+	}
+
+	#auth table tr td:nth-child(4), #auth table tr td:nth-child(6) {
+		text-align: center;
+	}
+
+	#recom textarea {
+		width: 100%;
+		box-sizing: border-box;
+	}
+
+	#forum .post_left {
+		float: none;
+		margin: 0 auto;
+		width: 100%;
+	}
+
+	#forum .post_right{
+		margin-left: 0;
+	}
+
+}
+
+#item_17 a, #topmenu li:nth-child(7) a {
+	font-weight: bold;
+}
+
+#item_17 a {
+	color: #ff4500;
+}
+
+#topmenu li:nth-child(7) a {
+	color: #ff813c;
+}
+
+.table_order td {
+	padding: 5px;
+}
+
+.table_order tr:nth-child(1) {
+	text-align: center;
+}
+
+.table_order td:nth-child(odd) {
+	text-align: center;
+}

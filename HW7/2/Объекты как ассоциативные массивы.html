@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<!-- saved from url=(0034)https://learn.javascript.ru/object -->
+<html lang="ru" class="working-hover"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><script type="text/javascript" async="" src="./Объекты как ассоциативные массивы_files/js"></script><script>window.currentUser = null;</script><script>window.rateUsdToNative = 65.928;</script><title itemprop="name">Объекты как ассоциативные массивы</title><link href="./Объекты как ассоциативные массивы_files/styles.9eaf7fd5767b03e33acd.css" rel="stylesheet"><meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, minimum-scale=1.0"><meta name="apple-mobile-web-app-capable" content="yes"><!-- chrome autotranslate is enabled only for "en" main version--><meta name="google" content="notranslate"><script>if (window.devicePixelRatio > 1) document.cookie = 'pixelRatio=' + window.devicePixelRatio + ';path=/;expires=Tue, 19 Jan 2038 03:14:07 GMT';</script><link href="./Объекты как ассоциативные массивы_files/css" rel="stylesheet"><link rel="apple-touch-icon-precomposed" href="https://learn.javascript.ru/img/favicon/apple-touch-icon-precomposed.png"><link rel="canonical" href="https://learn.javascript.ru/object"><meta name="msapplication-TileColor" content="#222A2C"><meta name="msapplication-TileImage" content="/img/favicon/tileicon.png"><link rel="icon" href="https://learn.javascript.ru/img/favicon/favicon.png"><meta itemprop="image" content="https://learn.javascript.ru/img/site_preview_ru_512x512.png"><meta property="og:title" content="Объекты как ассоциативные массивы"><meta property="og:image" content="https://learn.javascript.ru/img/site_preview_ru_1200x630.png"><meta property="og:image:type" content="image/png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="fb:admins" content="100001562528165"><meta name="twitter:card" content="summary"><meta name="twitter:title" content="Объекты как ассоциативные массивы"><meta name="twitter:site" content="@iliakan"><meta name="twitter:creator" content="@iliakan"><meta name="twitter:image" content="https://learn.javascript.ru/img/site_preview_ru_512x512.png"><link rel="prev" href="https://learn.javascript.ru/string"><link rel="next" href="https://learn.javascript.ru/object-for-in"><script>window.GA_ID = "UA-2056213-16";</script><script>window.GTM_ID = 'GTM-WD2DZPG'</script><script>window.YANDEX_METRIKA_ID = 17649010;</script><script>window.GoogleAnalyticsObject="ga",window.ga=function(){window.ga.q.push(arguments)},window.ga.q=[],window.ga.l=Date.now(),ga("create",GA_ID,"auto"),window.GTM_ID&&ga("require",GTM_ID),window.currentUser?ga("set","&uid",currentUser.id):ga("set","anonymizeIp",!0),window.addEventListener("error",function(e){var r=(e.filename||e.errorUrl)+": "+(e.lineno||e.errorLine),n=e.stack||e.error&&e.error.stack;ga("send","exception",{exDescription:e.message+" "+r+" "+n,exFatal:!0})});</script><script src="./Объекты как ассоциативные массивы_files/analytics.js.Без названия" async=""></script><script>ga('send', 'pageview');</script><script>window.metrika={reachGoal:function(){}},window.yandex_metrika_callbacks=[function(){try{window.metrika=new Ya.Metrika({id:YANDEX_METRIKA_ID,webvisor:!0,clickmap:!0,params:{user:window.currentUser&&window.currentUser.id}}),metrika.trackLinks({delay:150}),window.addEventListener("error",function(r){window.metrika.reachGoal("JSERROR",{src:(r.filename||r.errorUrl)+": "+(r.lineno||r.errorLine),stack:r.stack||r.error&&r.error.stack,message:r.message})})}catch(r){}}];</script><script src="https://mc.yandex.ru/metrika/watch.js" async=""></script><script>window.RECAPTCHA_ID = "6Lf9NyETAAAAACZlg-a9Us2SxvYbeVC1ROWaWv4O";</script><script src="./Объекты как ассоциативные массивы_files/init.9eaf7fd5767b03e33acd.js.Без названия"></script><script src="./Объекты как ассоциативные массивы_files/head.9eaf7fd5767b03e33acd.js.Без названия" defer=""></script><meta property="og:title" content="Объекты как ассоциативные массивы"><meta property="og:type" content="article"><script src="./Объекты как ассоциативные массивы_files/tutorial.9eaf7fd5767b03e33acd.js.Без названия" defer="" data-manual="1"></script><script src="./Объекты как ассоциативные массивы_files/footer.9eaf7fd5767b03e33acd.js.Без названия" defer=""></script><link id="avast_os_ext_custom_font" href="chrome-extension://eofcbnmajmjmplflapaojjnihcjkigck/common/ui/fonts/fonts.css" rel="stylesheet" type="text/css"></head><body class=""><script>window.fontTest();</script><span class="font-test" style=""></span><div class="page-wrapper page-wrapper_sidebar_on"><!--[if lt IE 10]><div style="color:red;text-align:center">Извините, IE&lt;10 не поддерживается, пожалуйста используйте более новый браузер.</div><![endif]--><div class="sitetoolbar sitetoolbar_tutorial"><div class="sitetoolbar__content"><div class="sitetoolbar__lang-switcher"><button class="sitetoolbar__dropdown-button" data-dropdown-toggler="">RU</button><div class="sitetoolbar__dropdown-wrap"><div class="sitetoolbar__dropdown-body"><div class="sitetoolbar__lang-switcher-body"><div class="supported-langs supported-langs_toolbar"><div class="supported-langs__text">Мы хотим сделать этот проект с открытым исходным кодом доступным для людей во всем мире. Пожалуйста, <a href="https://github.com/iliakan/javascript-tutorial-en" rel="noopener noreferrer" target="_blank">помогите нам перевести</a> это руководство на свой язык</div><div class="supported-langs__container"><ul class="supported-langs__list" style="height:128px"><li class="supported-langs__item"><a class="supported-langs__link" href="https://javascript.info/object"><span class="supported-langs__brief">EN</span><span class="supported-langs__title">English</span></a></li><li class="supported-langs__item supported-langs__item_current"><a class="supported-langs__link" href="https://learn.javascript.ru/"><span class="supported-langs__brief">RU</span><span class="supported-langs__title">Русский</span></a></li><li class="supported-langs__item"><a class="supported-langs__link" href="https://zh.javascript.info/object"><span class="supported-langs__brief">ZH</span><span class="supported-langs__title">简体中文</span></a></li><li class="supported-langs__item"><a class="supported-langs__link" href="https://ja.javascript.info/object"><span class="supported-langs__brief">JA</span><span class="supported-langs__title">日本語</span></a></li></ul></div></div></div></div></div></div><div class="sitetoolbar__logo-wrap"><a class="sitetoolbar__link sitetoolbar__link_logo" href="https://learn.javascript.ru/"><object type="image/svg+xml" class="sitetoolbar__logo sitetoolbar__logo_normal" data="./Объекты как ассоциативные массивы_files/sitetoolbar__logo_ru.svg" style="left: 0px; top: 0px; position: absolute;"></object><img class="sitetoolbar__logo sitetoolbar__logo_normal" src="./Объекты как ассоциативные массивы_files/sitetoolbar__logo_ru.svg" width="171" alt="" role="presentation" style="visibility: hidden;"><object type="image/svg+xml" class="sitetoolbar__logo sitetoolbar__logo_small" data="./Объекты как ассоциативные массивы_files/sitetoolbar__logo_small_ru.svg" style="left: 0px; top: 0px; position: absolute;"></object><img class="sitetoolbar__logo sitetoolbar__logo_small" src="./Объекты как ассоциативные массивы_files/sitetoolbar__logo_small_ru.svg" width="80" alt="" role="presentation"><script>Array.prototype.forEach.call(document.querySelectorAll("img.sitetoolbar__logo"),function(e){let t=document.createElement("object");t.type="image/svg+xml",t.className=e.className,t.style.cssText="left:0;top:0;position:absolute",t.onload=function(){t.onload=null,e.style.visibility="hidden"},t.data=e.src,e.parentNode.insertBefore(t,e)});</script></a></div><div class="sitetoolbar__nav-toggle-wrap"><button class="sitetoolbar__nav-toggle" type="button"></button></div><nav class="sitetoolbar__sections"><ul class="sitetoolbar__sections-list"><li class="sitetoolbar__section sitetoolbar__section_current"><a class="sitetoolbar__link" href="https://learn.javascript.ru/">Учебник</a></li><li class="sitetoolbar__section"><a class="sitetoolbar__link" href="https://learn.javascript.ru/courses">Курсы</a></li><li class="sitetoolbar__section"><a class="sitetoolbar__link" href="https://javascript.ru/forum/">Форум</a></li><li class="sitetoolbar__section"><a class="sitetoolbar__link" href="https://es5.javascript.ru/">ES5</a></li><li class="sitetoolbar__section"><a class="sitetoolbar__link" href="https://learn.javascript.ru/quiz">Тесты знаний</a></li><li class="sitetoolbar__section"><a class="sitetoolbar__link" href="https://learn.javascript.ru/jobs">Стажировки</a></li><li class="sitetoolbar__section sitetoolbar__section_dropdown"><button class="sitetoolbar__dropdown-button" data-dropdown-toggler="">Скринкасты</button><div class="sitetoolbar__dropdown-wrap"><div class="sitetoolbar__dropdown-body"><ul class="sitetoolbar__dropdown-items"><li class="sitetoolbar__dropdown-item"><a class="sitetoolbar__secondary-link sitetoolbar__dropdown-link" href="https://learn.javascript.ru/screencast/nodejs">Node.js</a></li><li class="sitetoolbar__dropdown-item"><a class="sitetoolbar__secondary-link sitetoolbar__dropdown-link" href="https://learn.javascript.ru/screencast/webpack">Webpack</a></li><li class="sitetoolbar__dropdown-item"><a class="sitetoolbar__secondary-link sitetoolbar__dropdown-link" href="https://learn.javascript.ru/screencast/gulp">Gulp 4</a></li><li class="sitetoolbar__dropdown-item"><a class="sitetoolbar__secondary-link sitetoolbar__dropdown-link" href="https://learn.javascript.ru/screencast/react">React.js</a></li><li class="sitetoolbar__dropdown-item"><a class="sitetoolbar__secondary-link sitetoolbar__dropdown-link" href="https://learn.javascript.ru/screencast/angular">Angular</a></li><li class="sitetoolbar__dropdown-item"><a class="sitetoolbar__secondary-link sitetoolbar__dropdown-link" href="https://learn.javascript.ru/screencast/git">Git</a></li></ul></div></div></li></ul></nav><div class="sitetoolbar__book-wrap"><a class="buy-book-button" href="https://learn.javascript.ru/ebook"><span class="buy-book-button__extra-text">Купить</span>EPUB/PDF</a></div><div class="sitetoolbar__login-wrap"><button class="sitetoolbar__login" data-action-login=""></button></div><div class="sitetoolbar__search-wrap"><div class="sitetoolbar__search-content"><form class="sitetoolbar__search" method="GET" action="https://learn.javascript.ru/search"><button class="sitetoolbar__search-toggle" type="button"></button><div class="sitetoolbar__search-input"><div class="text-input"><input class="text-input__control" name="query" placeholder="Искать на Javascript.ru" required="required" type="text"></div><button class="sitetoolbar__find" type="submit">Найти</button></div></form></div></div></div><div class="tablet-menu"><div class="tablet-menu__line"><div class="tablet-menu__content"><select class="tablet-menu__nav input-select input-select input-select_small" onchange="if(this.value) window.location.href=this.value"><option value="/" selected="">Учебник</option><option value="/courses">Курсы</option><option value="https://javascript.ru/forum/">Форум</option><option value="https://es5.javascript.ru">ES5</option><option value="/quiz">Тесты знаний</option><option value="/jobs">Стажировки</option></select></div></div><div class="tablet-menu__line"><div class="tablet-menu__content"><form class="tablet-menu-search" action="https://learn.javascript.ru/search/"><input class="tablet-menu-search__input" type="search" name="query" placeholder="Поиск в учебнике" required="required"><button class="tablet-menu-search__button" type="submit" name="type" value="articles">Поиск</button></form></div></div><div class="tablet-menu__line"><div class="tablet-menu__content"><a class="map" href="https://learn.javascript.ru/tutorial/map" data-action="tutorial-map"><span class="map__text">Карта учебника</span></a></div></div><div class="tablet-menu__line"><div class="tablet-menu__content"><div class="share-icons"><span class="share-icons__title">Поделиться</span><a class="share share_tw" href="https://twitter.com/share?url=https%3A%2F%2Flearn.javascript.ru%2Fobject"></a><a class="share share_fb" href="https://www.facebook.com/sharer/sharer.php?s=100&amp;p%5Burl%5D=https%3A%2F%2Flearn.javascript.ru%2Fobject"></a><a class="share share_gp" href="https://plus.google.com/share?url=https%3A%2F%2Flearn.javascript.ru%2Fobject"></a><a class="share share_vk" href="https://vkontakte.ru/share.php?url=https%3A%2F%2Flearn.javascript.ru%2Fobject"></a></div></div></div><div class="tablet-menu__line"><div class="tablet-menu__content"><select class="tablet-menu__nav input-select input-select input-select_small" onchange="if(this.value) window.location.href=this.value"><option value="https://javascript.info/object">English</option><option value="https://learn.javascript.ru/" selected="">Русский</option><option value="https://zh.javascript.info/object">简体中文</option><option value="https://ja.javascript.info/object">日本語</option></select></div></div></div><progress class="tutorial-progress" data-sticky="" value="33" max="86" data-tooltip="Урок 33 из 86"></progress></div><div class="page page_sidebar_on page_inner_padding page_sidebar-animation-on"><script>if(localStorage.noSidebar){document.querySelector(".page").classList.remove("page_sidebar_on");var pageWrapper=document.querySelector(".page-wrapper");pageWrapper&&pageWrapper.classList.remove("page-wrapper_sidebar_on")}setTimeout(function(){document.querySelector(".page").classList.add("page_sidebar-animation-on")},0);</script><div class="page__inner"><main class="main main_width-limit"><header class="main__header"><div class="main__header-inner"><ol class="breadcrumbs"><li class="breadcrumbs__item breadcrumbs__item_home" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb" itemref="breadcrumb-1"><a class="breadcrumbs__link" href="https://learn.javascript.ru/" itemprop="url"><span class="breadcrumbs__hidden-text" itemprop="title">Учебник</span></a></li><li class="breadcrumbs__item" id="breadcrumb-1" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb" itemref="breadcrumb-2" itemprop="child"><a class="breadcrumbs__link" href="https://learn.javascript.ru/js" itemprop="url"><span itemprop="title">Язык JavaScript</span></a></li><li class="breadcrumbs__item" id="breadcrumb-2" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb" itemprop="child"><a class="breadcrumbs__link" href="https://learn.javascript.ru/data-structures" itemprop="url"><span itemprop="title">Структуры данных</span></a></li></ol><h1 class="main__header-title">Объекты как ассоциативные массивы</h1></div></header><div class="content"><article class="formatted" itemscope="" itemtype="http://schema.org/TechArticle"><meta itemprop="name" content="Объекты как ассоциативные массивы"><div itemprop="author" itemscope="" itemtype="http://schema.org/Person"><meta itemprop="email" content="iliakan@gmail.com"><meta itemprop="name" content="Ilya Kantor"></div><div itemprop="articleBody"><p>Объекты в JavaScript сочетают в себе два важных функционала.</p>
+<p>Первый – это  ассоциативный массив: структура, пригодная для хранения любых данных. В этой главе мы рассмотрим использование объектов именно как массивов.</p>
+<p>Второй – языковые возможности для объектно-ориентированного программирования. Эти возможности мы изучим в последующих разделах учебника.</p>
+<h2><a class="main__anchor" name="assotsiativnye-massivy" href="https://learn.javascript.ru/object#assotsiativnye-massivy">Ассоциативные массивы</a></h2><p><a href="http://ru.wikipedia.org/wiki/%D0%90%D1%81%D1%81%D0%BE%D1%86%D0%B8%D0%B0%D1%82%D0%B8%D0%B2%D0%BD%D1%8B%D0%B9_%D0%BC%D0%B0%D1%81%D1%81%D0%B8%D0%B2">Ассоциативный массив</a> – структура данных, в которой можно хранить любые данные в формате ключ-значение.</p>
+<p>Её можно легко представить как шкаф с подписанными ящиками. Все данные хранятся в ящичках. По имени можно легко найти ящик и взять то значение, которое в нём лежит.</p>
+<figure><div class="image" style="width:134px">
+      <div class="image__ratio" style="padding-top:125.37313432835822%"></div>
+      <img src="./Объекты как ассоциативные массивы_files/object@2x.png" alt="" width="134" height="168" class="image__image">
+      </div></figure><p>В отличие от реальных шкафов, в ассоциативный массив можно в любой момент добавить новые именованные «ящики» или удалить существующие. Далее мы увидим примеры, как это делается.</p>
+<p>Кстати, в других языках программирования такую структуру данных также называют <em>«словарь»</em> и <em>«хэш»</em>.</p>
+<h2><a class="main__anchor" name="sozdanie-obektov" href="https://learn.javascript.ru/object#sozdanie-obektov">Создание объектов</a></h2><p>Пустой объект («пустой шкаф») может быть создан одним из двух синтаксисов:</p>
+<div data-trusted="1" class="code-example" data-prism-highlighted="1">
+      <div class="codebox code-example__codebox">
+        
+        <div class="codebox__code" data-code="1">
+          <pre class="line-numbers  language-javascript"><code class=" language-javascript">o <code class="token operator">=</code> <code class="token keyword">new</code> <code class="token class-name">Object</code><code class="token punctuation">(</code><code class="token punctuation">)</code><code class="token punctuation">;</code> <code class="token comment">// (1)</code>
+o <code class="token operator">=</code> <code class="token punctuation">{</code><code class="token punctuation">}</code><code class="token punctuation">;</code> <code class="token comment">// пустые фигурные скобки (2)</code></code><span class="line-numbers-rows"><span></span><span></span></span></pre>
+        </div>
+      </div>
+      
+      </div><p>Обычно все пользуются синтаксисом <code>(2)</code>, т.к. он короче.</p>
+<h2><a class="main__anchor" name="operatsii-s-obektom" href="https://learn.javascript.ru/object#operatsii-s-obektom">Операции с объектом</a></h2><p>Объект может содержать в себе любые значения, которые называются <em>свойствами объекта</em>.  Доступ к свойствам осуществляется по <em>имени свойства</em> (иногда говорят <em>«по ключу»</em>).</p>
+<p>Например, создадим объект <code>person</code> для хранения информации о человеке:</p>
+<div data-trusted="1" class="code-example" data-prism-highlighted="1">
+      <div class="codebox code-example__codebox">
+        
+        <div class="codebox__code" data-code="1">
+          <pre class="line-numbers  language-javascript"><code class=" language-javascript"><code class="token keyword">var</code> person <code class="token operator">=</code> <code class="token punctuation">{</code><code class="token punctuation">}</code><code class="token punctuation">;</code> <code class="token comment">// пока пустой</code></code><span class="line-numbers-rows"><span></span></span></pre>
+        </div>
+      </div>
+      
+      </div><figure><div class="image" style="width:128px">
+      <div class="image__ratio" style="padding-top:161.71875%"></div>
+      <img src="./Объекты как ассоциативные массивы_files/object-person-empty@2x.png" alt="" width="128" height="207" class="image__image">
+      </div></figure><p>Основные операции с объектами – это создание, получение и удаление свойств.</p>
+<p>Для обращения к свойствам используется запись «через точку», вида <code>объект.свойство</code>, например:</p>
+<div data-trusted="1" class="code-example" data-prism-highlighted="1">
+      <div class="codebox code-example__codebox">
+        
+        <div class="codebox__code" data-code="1">
+          <pre class="line-numbers  language-javascript"><code class=" language-javascript"><code class="token comment">// при присвоении свойства в объекте автоматически создаётся "ящик"</code>
+<code class="token comment">// с именем "name" и в него записывается содержимое 'Вася'</code>
+person<code class="token punctuation">.</code>name <code class="token operator">=</code> <code class="token string">'Вася'</code><code class="token punctuation">;</code>
+
+person<code class="token punctuation">.</code>age <code class="token operator">=</code> <code class="token number">25</code><code class="token punctuation">;</code> <code class="token comment">// запишем ещё одно свойство: с именем 'age' и значением 25</code></code><span class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></pre>
+        </div>
+      </div>
+      
+      </div><figure><div class="image" style="width:125px">
+      <div class="image__ratio" style="padding-top:132%"></div>
+      <img src="./Объекты как ассоциативные массивы_files/object-person-1@2x.png" alt="" width="125" height="165" class="image__image">
+      </div></figure><p>Значения хранятся «внутри» ящиков. Обратим внимание – любые значения, любых типов: число, строка – не важно.</p>
+<p>Чтобы прочитать их – также обратимся через точку:</p>
+<div data-trusted="1" class="code-example" data-prism-highlighted="1">
+      <div class="codebox code-example__codebox">
+        
+        <div class="codebox__code" data-code="1">
+          <pre class="line-numbers  language-javascript"><code class=" language-javascript"><code class="token function">alert</code><code class="token punctuation">(</code> person<code class="token punctuation">.</code>name <code class="token operator">+</code> <code class="token string">': '</code> <code class="token operator">+</code> person<code class="token punctuation">.</code>age <code class="token punctuation">)</code><code class="token punctuation">;</code> <code class="token comment">// "Вася: 25"</code></code><span class="line-numbers-rows"><span></span></span></pre>
+        </div>
+      </div>
+      
+      </div><p>Удаление осуществляется оператором <code>delete</code>:</p>
+<div data-trusted="1" class="code-example" data-prism-highlighted="1">
+      <div class="codebox code-example__codebox">
+        
+        <div class="codebox__code" data-code="1">
+          <pre class="line-numbers  language-javascript"><code class=" language-javascript"><code class="token keyword">delete</code> person<code class="token punctuation">.</code>age<code class="token punctuation">;</code></code><span class="line-numbers-rows"><span></span></span></pre>
+        </div>
+      </div>
+      
+      </div><p>Осталось только свойство <code>name</code>:</p>
+<figure><div class="image" style="width:134px">
+      <div class="image__ratio" style="padding-top:123.13432835820895%"></div>
+      <img src="./Объекты как ассоциативные массивы_files/object-person-2@2x.png" alt="" width="134" height="165" class="image__image">
+      </div></figure><p>Иногда бывает нужно проверить, есть ли в объекте свойство с определенным ключом.</p>
+<p>Для этого есть особый оператор: <code>"in"</code>.</p>
+<p>Его синтаксис: <code>"prop" in obj</code>, причем имя свойства – в виде строки, например:</p>
+<div data-trusted="1" class="code-example" data-prism-highlighted="1">
+      <div class="codebox code-example__codebox">
+        
+        <div class="codebox__code" data-code="1">
+          <pre class="line-numbers  language-javascript"><code class=" language-javascript"><code class="token keyword">if</code> <code class="token punctuation">(</code><code class="token string">"name"</code> <code class="token keyword">in</code> person<code class="token punctuation">)</code> <code class="token punctuation">{</code>
+  <code class="token function">alert</code><code class="token punctuation">(</code> <code class="token string">"Свойство name существует!"</code> <code class="token punctuation">)</code><code class="token punctuation">;</code>
+<code class="token punctuation">}</code></code><span class="line-numbers-rows"><span></span><span></span><span></span></span></pre>
+        </div>
+      </div>
+      
+      </div><p>Впрочем, чаще используется другой способ – сравнение значения с <code>undefined</code>.</p>
+<p><strong>Дело в том, что в JavaScript можно обратиться к любому свойству объекта, даже если его нет</strong>.</p>
+<p>Ошибки не будет.</p>
+<p>Но если свойство не существует, то вернется специальное значение <code>undefined</code>:</p>
+<div data-trusted="1" class="code-example" data-prism-highlighted="1">
+      <div class="codebox code-example__codebox">
+        
+        <div class="toolbar codebox__toolbar">
+          <div class="toolbar__tool">
+            <a href="https://learn.javascript.ru/object#" title="выполнить" data-action="run" class="toolbar__button toolbar__button_run"></a>
+          </div>
+          <div class="toolbar__tool">
+            <a href="https://learn.javascript.ru/object#" title="открыть в песочнице" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a>
+          </div>
+        </div>
+        <div class="codebox__code" data-code="1">
+          <pre class="line-numbers  language-javascript"><code class=" language-javascript"><code class="token keyword">var</code> person <code class="token operator">=</code> <code class="token punctuation">{</code><code class="token punctuation">}</code><code class="token punctuation">;</code>
+
+<code class="token function">alert</code><code class="token punctuation">(</code> person<code class="token punctuation">.</code>lalala <code class="token punctuation">)</code><code class="token punctuation">;</code> <code class="token comment">// undefined, нет свойства с ключом lalala</code></code><span class="line-numbers-rows"><span></span><span></span><span></span></span></pre>
+        </div>
+      </div>
+      
+      </div><p>Таким образом мы можем легко проверить существование свойства – получив его и сравнив с <code>undefined</code>:</p>
+<div data-trusted="1" class="code-example" data-prism-highlighted="1">
+      <div class="codebox code-example__codebox">
+        
+        <div class="toolbar codebox__toolbar">
+          <div class="toolbar__tool">
+            <a href="https://learn.javascript.ru/object#" title="выполнить" data-action="run" class="toolbar__button toolbar__button_run"></a>
+          </div>
+          <div class="toolbar__tool">
+            <a href="https://learn.javascript.ru/object#" title="открыть в песочнице" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a>
+          </div>
+        </div>
+        <div class="codebox__code" data-code="1">
+          <pre class="line-numbers  language-javascript"><code class=" language-javascript"><code class="token keyword">var</code> person <code class="token operator">=</code> <code class="token punctuation">{</code>
+  name<code class="token punctuation">:</code> <code class="token string">"Василий"</code>
+<code class="token punctuation">}</code><code class="token punctuation">;</code>
+
+<code class="token function">alert</code><code class="token punctuation">(</code> person<code class="token punctuation">.</code>lalala <code class="token operator">===</code> undefined <code class="token punctuation">)</code><code class="token punctuation">;</code> <code class="token comment">// true, свойства нет</code>
+<code class="token function">alert</code><code class="token punctuation">(</code> person<code class="token punctuation">.</code>name <code class="token operator">===</code> undefined <code class="token punctuation">)</code><code class="token punctuation">;</code> <code class="token comment">// false, свойство есть.</code></code><span class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></pre>
+        </div>
+      </div>
+      
+      </div><div class="important important_smart">
+            <div class="important__header"><span class="important__type">Разница между проверками <code>in</code> и <code>=== undefined</code></span></div>
+            <div class="important__content"><p>Есть два средства для проверки наличия свойства в объекте: первое – оператор <code>in</code>, второе – получить его и сравнить с <code>undefined</code>.</p>
+<p>Они почти идентичны, но есть одна небольшая разница.</p>
+<p>Дело в том, что технически возможно, что <em>свойство есть, а его значением является <code>undefined</code></em>:</p>
+<div data-trusted="0" class="code-example" data-refresh="1" data-highlight="[{&quot;start&quot;:3,&quot;end&quot;:5}]" data-prism-highlighted="1">
+      <div class="codebox code-example__codebox">
+        
+        <div class="toolbar codebox__toolbar">
+          <div class="toolbar__tool">
+            <a href="https://learn.javascript.ru/object#" title="выполнить" data-action="run" class="toolbar__button toolbar__button_run"></a>
+          </div>
+          <div class="toolbar__tool">
+            <a href="https://learn.javascript.ru/object#" title="открыть в песочнице" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a>
+          </div>
+        </div>
+        <div class="codebox__code" data-code="1">
+          <pre class="line-numbers  language-javascript"><code class="block-highlight" data-start="3">
+
+
+<code class="mask">
+
+
+</code></code><code class=" language-javascript"><code class="token keyword">var</code> obj <code class="token operator">=</code> <code class="token punctuation">{</code><code class="token punctuation">}</code><code class="token punctuation">;</code>
+obj<code class="token punctuation">.</code>test <code class="token operator">=</code> undefined<code class="token punctuation">;</code> <code class="token comment">// добавили свойство со значением undefined</code>
+
+<code class="token comment">// проверим наличие свойств test и заведомо отсутствующего blabla</code>
+<code class="token function">alert</code><code class="token punctuation">(</code> obj<code class="token punctuation">.</code>test <code class="token operator">===</code> undefined <code class="token punctuation">)</code><code class="token punctuation">;</code> <code class="token comment">// true</code>
+<code class="token function">alert</code><code class="token punctuation">(</code> obj<code class="token punctuation">.</code>blabla <code class="token operator">===</code> undefined <code class="token punctuation">)</code><code class="token punctuation">;</code> <code class="token comment">// true</code></code><span class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></pre>
+        </div>
+      </div>
+      
+      </div><p>…При этом, как видно из кода, при простом сравнении наличие такого свойства будет неотличимо от его отсутствия.</p>
+<p>Но оператор <code>in</code> гарантирует правильный результат:</p>
+<div data-trusted="0" class="code-example" data-refresh="1" data-highlight="[{&quot;start&quot;:3,&quot;end&quot;:4}]" data-prism-highlighted="1">
+      <div class="codebox code-example__codebox">
+        
+        <div class="toolbar codebox__toolbar">
+          <div class="toolbar__tool">
+            <a href="https://learn.javascript.ru/object#" title="выполнить" data-action="run" class="toolbar__button toolbar__button_run"></a>
+          </div>
+          <div class="toolbar__tool">
+            <a href="https://learn.javascript.ru/object#" title="открыть в песочнице" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a>
+          </div>
+        </div>
+        <div class="codebox__code" data-code="1">
+          <pre class="line-numbers  language-javascript"><code class="block-highlight" data-start="3">
+
+
+<code class="mask">
+
+</code></code><code class=" language-javascript"><code class="token keyword">var</code> obj <code class="token operator">=</code> <code class="token punctuation">{</code><code class="token punctuation">}</code><code class="token punctuation">;</code>
+obj<code class="token punctuation">.</code>test <code class="token operator">=</code> undefined<code class="token punctuation">;</code>
+
+<code class="token function">alert</code><code class="token punctuation">(</code> <code class="token string">"test"</code> <code class="token keyword">in</code> obj <code class="token punctuation">)</code><code class="token punctuation">;</code> <code class="token comment">// true</code>
+<code class="token function">alert</code><code class="token punctuation">(</code> <code class="token string">"blabla"</code> <code class="token keyword">in</code> obj <code class="token punctuation">)</code><code class="token punctuation">;</code> <code class="token comment">// false</code></code><span class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></pre>
+        </div>
+      </div>
+      
+      </div><p>Как правило, в коде мы не будем присваивать <code>undefined</code>, чтобы корректно работали обе проверки. А в качестве значения, обозначающего неизвестность и неопределенность, будем использовать <code>null</code>.</p>
+</div></div>
+<h3><a class="main__anchor" name="dostup-cherez-kvadratnye-skobki" href="https://learn.javascript.ru/object#dostup-cherez-kvadratnye-skobki">Доступ через квадратные скобки</a></h3><p>Существует альтернативный синтаксис работы со свойствами, использующий квадратные скобки <code>объект['свойство']</code>:</p>
+<div data-trusted="1" class="code-example" data-prism-highlighted="1">
+      <div class="codebox code-example__codebox">
+        
+        <div class="toolbar codebox__toolbar">
+          <div class="toolbar__tool">
+            <a href="https://learn.javascript.ru/object#" title="выполнить" data-action="run" class="toolbar__button toolbar__button_run"></a>
+          </div>
+          <div class="toolbar__tool">
+            <a href="https://learn.javascript.ru/object#" title="открыть в песочнице" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a>
+          </div>
+        </div>
+        <div class="codebox__code" data-code="1">
+          <pre class="line-numbers  language-javascript"><code class=" language-javascript"><code class="token keyword">var</code> person <code class="token operator">=</code> <code class="token punctuation">{</code><code class="token punctuation">}</code><code class="token punctuation">;</code>
+
+person<code class="token punctuation">[</code><code class="token string">'name'</code><code class="token punctuation">]</code> <code class="token operator">=</code> <code class="token string">'Вася'</code><code class="token punctuation">;</code> <code class="token comment">// то же что и person.name = 'Вася'</code></code><span class="line-numbers-rows"><span></span><span></span><span></span></span></pre>
+        </div>
+      </div>
+      
+      </div><p>Записи <code>person['name']</code> и <code>person.name</code> идентичны, но квадратные скобки позволяют использовать в качестве имени свойства любую строку:</p>
+<div data-trusted="1" class="code-example" data-prism-highlighted="1">
+      <div class="codebox code-example__codebox">
+        
+        <div class="toolbar codebox__toolbar">
+          <div class="toolbar__tool">
+            <a href="https://learn.javascript.ru/object#" title="выполнить" data-action="run" class="toolbar__button toolbar__button_run"></a>
+          </div>
+          <div class="toolbar__tool">
+            <a href="https://learn.javascript.ru/object#" title="открыть в песочнице" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a>
+          </div>
+        </div>
+        <div class="codebox__code" data-code="1">
+          <pre class="line-numbers  language-javascript"><code class=" language-javascript"><code class="token keyword">var</code> person <code class="token operator">=</code> <code class="token punctuation">{</code><code class="token punctuation">}</code><code class="token punctuation">;</code>
+
+person<code class="token punctuation">[</code><code class="token string">'любимый стиль музыки'</code><code class="token punctuation">]</code> <code class="token operator">=</code> <code class="token string">'Джаз'</code><code class="token punctuation">;</code></code><span class="line-numbers-rows"><span></span><span></span><span></span></span></pre>
+        </div>
+      </div>
+      
+      </div><p>Такое присвоение было бы невозможно «через точку», так интерпретатор после первого пробела подумает, что свойство закончилось, и далее выдаст ошибку:</p>
+<div data-trusted="1" class="code-example" data-prism-highlighted="1">
+      <div class="codebox code-example__codebox">
+        
+        <div class="toolbar codebox__toolbar">
+          <div class="toolbar__tool">
+            <a href="https://learn.javascript.ru/object#" title="выполнить" data-action="run" class="toolbar__button toolbar__button_run"></a>
+          </div>
+          <div class="toolbar__tool">
+            <a href="https://learn.javascript.ru/object#" title="открыть в песочнице" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a>
+          </div>
+        </div>
+        <div class="codebox__code" data-code="1">
+          <pre class="line-numbers  language-javascript"><code class=" language-javascript">person<code class="token punctuation">.</code>любимый стиль музыки <code class="token operator">=</code> <code class="token string">'Джаз'</code><code class="token punctuation">;</code> <code class="token comment">// ??? ошибка</code></code><span class="line-numbers-rows"><span></span></span></pre>
+        </div>
+      </div>
+      
+      </div><p>В обоих случаях, <strong>имя свойства обязано быть строкой</strong>. Если использовано значение другого типа – JavaScript приведет его к строке автоматически.</p>
+<h3><a class="main__anchor" name="dostup-k-svoystvu-cherez-peremennuyu" href="https://learn.javascript.ru/object#dostup-k-svoystvu-cherez-peremennuyu">Доступ к свойству через переменную</a></h3><p>Квадратные скобки также позволяют обратиться к свойству, имя которого хранится в переменной:</p>
+<div data-trusted="1" class="code-example" data-prism-highlighted="1">
+      <div class="codebox code-example__codebox">
+        
+        <div class="toolbar codebox__toolbar">
+          <div class="toolbar__tool">
+            <a href="https://learn.javascript.ru/object#" title="выполнить" data-action="run" class="toolbar__button toolbar__button_run"></a>
+          </div>
+          <div class="toolbar__tool">
+            <a href="https://learn.javascript.ru/object#" title="открыть в песочнице" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a>
+          </div>
+        </div>
+        <div class="codebox__code" data-code="1">
+          <pre class="line-numbers  language-javascript"><code class=" language-javascript"><code class="token keyword">var</code> person <code class="token operator">=</code> <code class="token punctuation">{</code><code class="token punctuation">}</code><code class="token punctuation">;</code>
+person<code class="token punctuation">.</code>age <code class="token operator">=</code> <code class="token number">25</code><code class="token punctuation">;</code>
+<code class="token keyword">var</code> key <code class="token operator">=</code> <code class="token string">'age'</code><code class="token punctuation">;</code>
+
+<code class="token function">alert</code><code class="token punctuation">(</code> person<code class="token punctuation">[</code>key<code class="token punctuation">]</code> <code class="token punctuation">)</code><code class="token punctuation">;</code> <code class="token comment">// выведет person['age']</code></code><span class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></pre>
+        </div>
+      </div>
+      
+      </div><p>Вообще, если имя свойства хранится в переменной (<code>var key = "age"</code>), то единственный способ к нему обратиться – это квадратные скобки <code>person[key]</code>.</p>
+<p>Доступ через точку используется, если мы на этапе написания программы уже знаем название свойства. А если оно будет определено по ходу выполнения, например, введено посетителем и записано в переменную, то единственный выбор – квадратные скобки.</p>
+<h3><a class="main__anchor" name="obyavlenie-so-svoystvami" href="https://learn.javascript.ru/object#obyavlenie-so-svoystvami">Объявление со свойствами</a></h3><p>Объект можно заполнить значениями при создании, указав их в фигурных скобках: <code>{ ключ1: значение1, ключ2: значение2, ... }</code>.</p>
+<p>Такой синтаксис называется <em>литеральным</em> (англ. literal).</p>
+<p>Следующие два фрагмента кода создают одинаковый объект:</p>
+<div data-trusted="1" class="code-example" data-prism-highlighted="1">
+      <div class="codebox code-example__codebox">
+        
+        <div class="codebox__code" data-code="1">
+          <pre class="line-numbers  language-javascript"><code class=" language-javascript"><code class="token keyword">var</code> menuSetup <code class="token operator">=</code> <code class="token punctuation">{</code>
+  width<code class="token punctuation">:</code> <code class="token number">300</code><code class="token punctuation">,</code>
+  height<code class="token punctuation">:</code> <code class="token number">200</code><code class="token punctuation">,</code>
+  title<code class="token punctuation">:</code> <code class="token string">"Menu"</code>
+<code class="token punctuation">}</code><code class="token punctuation">;</code>
+
+<code class="token comment">// то же самое, что:</code>
+
+<code class="token keyword">var</code> menuSetup <code class="token operator">=</code> <code class="token punctuation">{</code><code class="token punctuation">}</code><code class="token punctuation">;</code>
+menuSetup<code class="token punctuation">.</code>width <code class="token operator">=</code> <code class="token number">300</code><code class="token punctuation">;</code>
+menuSetup<code class="token punctuation">.</code>height <code class="token operator">=</code> <code class="token number">200</code><code class="token punctuation">;</code>
+menuSetup<code class="token punctuation">.</code>title <code class="token operator">=</code> <code class="token string">'Menu'</code><code class="token punctuation">;</code></code><span class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></pre>
+        </div>
+      </div>
+      
+      </div><p>Названия свойств можно перечислять как в кавычках, так и без, если они удовлетворяют ограничениям для имён переменных.</p>
+<p>Например:</p>
+<div data-trusted="1" class="code-example" data-prism-highlighted="1">
+      <div class="codebox code-example__codebox">
+        
+        <div class="codebox__code" data-code="1">
+          <pre class="line-numbers  language-javascript"><code class=" language-javascript"><code class="token keyword">var</code> menuSetup <code class="token operator">=</code> <code class="token punctuation">{</code>
+  width<code class="token punctuation">:</code> <code class="token number">300</code><code class="token punctuation">,</code>
+  <code class="token string">'height'</code><code class="token punctuation">:</code> <code class="token number">200</code><code class="token punctuation">,</code>
+  <code class="token string">"мама мыла раму"</code><code class="token punctuation">:</code> <code class="token boolean">true</code>
+<code class="token punctuation">}</code><code class="token punctuation">;</code></code><span class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></pre>
+        </div>
+      </div>
+      
+      </div><p>В качестве значения можно тут же указать и другой объект:</p>
+<div data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:3,&quot;end&quot;:7}]" data-prism-highlighted="1">
+      <div class="codebox code-example__codebox">
+        
+        <div class="codebox__code" data-code="1">
+          <pre class="line-numbers  language-javascript"><code class="block-highlight" data-start="3">
+
+
+<code class="mask">
+
+
+
+
+</code></code><code class=" language-javascript"><code class="token keyword">var</code> user <code class="token operator">=</code> <code class="token punctuation">{</code>
+  name<code class="token punctuation">:</code> <code class="token string">"Таня"</code><code class="token punctuation">,</code>
+  age<code class="token punctuation">:</code> <code class="token number">25</code><code class="token punctuation">,</code>
+  size<code class="token punctuation">:</code> <code class="token punctuation">{</code>
+    top<code class="token punctuation">:</code> <code class="token number">90</code><code class="token punctuation">,</code>
+    middle<code class="token punctuation">:</code> <code class="token number">60</code><code class="token punctuation">,</code>
+    bottom<code class="token punctuation">:</code> <code class="token number">90</code>
+  <code class="token punctuation">}</code>
+<code class="token punctuation">}</code>
+
+<code class="token function">alert</code><code class="token punctuation">(</code>user<code class="token punctuation">.</code>name<code class="token punctuation">)</code> <code class="token comment">// "Таня"</code>
+
+<code class="token function">alert</code><code class="token punctuation">(</code>user<code class="token punctuation">.</code>size<code class="token punctuation">.</code>top<code class="token punctuation">)</code> <code class="token comment">// 90</code></code><span class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></pre>
+        </div>
+      </div>
+      
+      </div><p>Здесь значением свойства <code>size</code> является объект <code>{top: 90, middle: 60, bottom: 90 }</code>.</p>
+<h2><a class="main__anchor" name="kompaktnoe-predstavlenie-obektov" href="https://learn.javascript.ru/object#kompaktnoe-predstavlenie-obektov">Компактное представление объектов</a></h2><div class="important important_warn">
+            <div class="important__header"><span class="important__type">Hardcore coders only</span></div>
+            <div class="important__content"><p>Эта секция относится ко внутреннему устройству структуры данных. Она не обязательна к прочтению.</p>
+</div></div>
+<p>Браузер использует специальное «компактное» представление объектов, чтобы сэкономить память в том случае, когда однотипных объектов много.</p>
+<p>Например, посмотрим на такой объект:</p>
+<div data-trusted="1" class="code-example" data-prism-highlighted="1">
+      <div class="codebox code-example__codebox">
+        
+        <div class="codebox__code" data-code="1">
+          <pre class="line-numbers  language-javascript"><code class=" language-javascript"><code class="token keyword">var</code> user <code class="token operator">=</code> <code class="token punctuation">{</code>
+  name<code class="token punctuation">:</code> <code class="token string">"Vasya"</code><code class="token punctuation">,</code>
+  age<code class="token punctuation">:</code> <code class="token number">25</code>
+<code class="token punctuation">}</code><code class="token punctuation">;</code></code><span class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></pre>
+        </div>
+      </div>
+      
+      </div><p>Здесь содержится информация о свойстве <code>name</code> и его строковом значении, а также о свойстве <code>age</code> и его численном значении. Представим, что таких объектов много.</p>
+<p>Получится, что информация об именах свойств <code>name</code> и <code>age</code> дублируется в каждом объекте. Чтобы этого избежать, браузер применяет оптимизацию.</p>
+<p><strong>При создании множества объектов одного и того же вида (с одинаковыми полями) интерпретатор выносит описание полей в отдельную структуру. А сам объект остаётся в виде непрерывной области памяти с данными.</strong></p>
+<p>Например, есть много объектов с полями <code>name</code> и <code>age</code>:</p>
+<div data-trusted="1" class="code-example" data-prism-highlighted="1">
+      <div class="codebox code-example__codebox">
+        
+        <div class="codebox__code" data-code="1">
+          <pre class="line-numbers  language-javascript"><code class=" language-javascript"><code class="token punctuation">{</code>name<code class="token punctuation">:</code> <code class="token string">"Вася"</code><code class="token punctuation">,</code> age<code class="token punctuation">:</code> <code class="token number">25</code><code class="token punctuation">}</code>
+<code class="token punctuation">{</code>name<code class="token punctuation">:</code> <code class="token string">"Петя"</code><code class="token punctuation">,</code> age<code class="token punctuation">:</code> <code class="token number">22</code><code class="token punctuation">}</code>
+<code class="token punctuation">{</code>name<code class="token punctuation">:</code> <code class="token string">"Маша"</code><code class="token punctuation">,</code> age<code class="token punctuation">:</code> <code class="token number">19</code><code class="token punctuation">}</code>
+<code class="token operator">...</code></code><span class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></pre>
+        </div>
+      </div>
+      
+      </div><p>Для их эффективного хранения будет создана структура, которая описывает данный вид объектов. Выглядеть она будет примерно так: <code>&lt;string name, number age&gt;</code>. А сами объекты будут представлены в памяти только данными:</p>
+<div data-trusted="1" class="code-example" data-prism-highlighted="1">
+      <div class="codebox code-example__codebox">
+        
+        <div class="codebox__code" data-code="1">
+          <pre class="line-numbers  language-javascript"><code class=" language-javascript"><code class="token operator">&lt;</code>структура<code class="token punctuation">:</code> string name<code class="token punctuation">,</code> number age<code class="token operator">&gt;</code>
+Вася <code class="token number">25</code>
+Петя <code class="token number">22</code>
+Маша <code class="token number">19</code></code><span class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></pre>
+        </div>
+      </div>
+      
+      </div><p>При добавлении нового объекта такой структуры достаточно хранить значения полей, но не их имена. Экономия памяти – налицо.</p>
+<p>А что происходит, если к объекту добавляется новое свойство? Например, к одному из них добавили свойство <code>isAdmin</code>:</p>
+<div data-trusted="1" class="code-example" data-prism-highlighted="1">
+      <div class="codebox code-example__codebox">
+        
+        <div class="codebox__code" data-code="1">
+          <pre class="line-numbers  language-javascript"><code class=" language-javascript">user<code class="token punctuation">.</code>isAdmin <code class="token operator">=</code> <code class="token boolean">true</code><code class="token punctuation">;</code></code><span class="line-numbers-rows"><span></span></span></pre>
+        </div>
+      </div>
+      
+      </div><p>В этом случае браузер смотрит, есть ли уже структура, под которую подходит такой объект. Если нет – она создаётся и объект привязывается к ней.</p>
+<p><strong>Эта оптимизация является примером того, что далеко не всё то, что мы пишем, один-в-один переносится в память.</strong></p>
+<p>Современные интерпретаторы очень стараются оптимизировать как код, так и структуры данных. Детали применения и реализации этого способа хранения варьируются от браузера к браузеру. О том, как это сделано в Chrome можно узнать, например, из презентации <a href="http://www.slideshare.net/newmovie/know-yourengines-velocity2011">Know Your Engines</a>. Она была некоторое время назад, но с тех пор мало что изменилось.</p>
+<h2><a class="main__anchor" name="itogo" href="https://learn.javascript.ru/object#itogo">Итого</a></h2><p>Объекты – это ассоциативные массивы с дополнительными возможностями:</p>
+<ul>
+<li>Доступ к элементам осуществляется:
+<ul>
+<li>Напрямую по ключу <code>obj.prop = 5</code></li>
+<li>Через переменную, в которой хранится ключ:<div data-trusted="1" class="code-example" data-prism-highlighted="1">
+      <div class="codebox code-example__codebox">
+        
+        <div class="codebox__code" data-code="1">
+          <pre class="line-numbers  language-javascript"><code class=" language-javascript"><code class="token keyword">var</code> key <code class="token operator">=</code> <code class="token string">"prop"</code><code class="token punctuation">;</code>
+obj<code class="token punctuation">[</code>key<code class="token punctuation">]</code> <code class="token operator">=</code> <code class="token number">5</code></code><span class="line-numbers-rows"><span></span><span></span></span></pre>
+        </div>
+      </div>
+      
+      </div></li>
+</ul>
+</li>
+<li>Удаление ключей: <code>delete obj.name</code>.</li>
+<li>Существование свойства может проверять оператор <code>in</code>: <code>if ("prop" in obj)</code>, как правило, работает и просто сравнение <code>if (obj.prop !== undefined)</code>.</li>
+</ul>
+</div></article><div class="tasks formatted"><h2 class="tasks__title" id="tasks"><a class="tasks__title-anchor main__anchor main__anchor main__anchor_noicon" href="https://learn.javascript.ru/object#tasks">Задачи</a></h2><div class="task tasks__task"><div class="task__header"><div class="task__title-wrap"><h3 class="task__title"><a class="main__anchor" href="https://learn.javascript.ru/object#pervyy-obekt" name="pervyy-obekt">Первый объект</a></h3><a class="task__open-link" href="https://learn.javascript.ru/task/hello-object" target="_blank"></a></div><div class="task__header-note"><span class="task__importance" title="Насколько эта задача важна для освоения материала, от 1 до 5">важность: 3</span></div><div class="task__content"><p>Мини-задача на синтаксис объектов. Напишите код, по строке на каждое действие.</p>
+<ol>
+<li>Создайте пустой объект <code>user</code>.</li>
+<li>Добавьте свойство <code>name</code> со значением <code>Вася</code>.</li>
+<li>Добавьте свойство <code>surname</code> со значением <code>Петров</code>.</li>
+<li>Поменяйте значение <code>name</code> на <code>Сергей</code>.</li>
+<li>Удалите свойство <code>name</code> из объекта.</li>
+</ol>
+<button class="task__solution" type="button">решение</button><div class="task__answer"><div class="task__answer-content"><div data-trusted="1" class="code-example" data-prism-highlighted="1">
+      <div class="codebox code-example__codebox">
+        
+        <div class="codebox__code" data-code="1">
+          <pre class="line-numbers  language-javascript"><code class=" language-javascript"><code class="token keyword">var</code> user <code class="token operator">=</code> <code class="token punctuation">{</code><code class="token punctuation">}</code><code class="token punctuation">;</code>
+user<code class="token punctuation">.</code>name <code class="token operator">=</code> <code class="token string">"Вася"</code><code class="token punctuation">;</code>
+user<code class="token punctuation">.</code>surname <code class="token operator">=</code> <code class="token string">"Петров"</code><code class="token punctuation">;</code>
+user<code class="token punctuation">.</code>name <code class="token operator">=</code> <code class="token string">"Сергей"</code><code class="token punctuation">;</code>
+<code class="token keyword">delete</code> user<code class="token punctuation">.</code>name<code class="token punctuation">;</code></code><span class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></pre>
+        </div>
+      </div>
+      
+      </div></div><button class="close-button task__answer-close" type="button" title="закрыть"></button></div></div></div></div></div></div><div class="page__nav-wrap"><a class="page__nav page__nav_prev" href="https://learn.javascript.ru/string" data-tooltip="Строки"><span class="page__nav-text"><span class="page__nav-text-shortcut">Ctrl + <span class="page__nav-text-arr">←</span></span></span><span class="page__nav-text-alternate">Предыдущий урок</span></a><a class="page__nav page__nav_next" href="https://learn.javascript.ru/object-for-in" data-tooltip="Объекты: перебор свойств"><span class="page__nav-text"><span class="page__nav-text-shortcut">Ctrl + <span class="page__nav-text-arr">→</span></span></span><span class="page__nav-text-alternate">Следующий урок</span></a></div><div class="article-tablet-foot tablet-only"><div class="article-tablet-foot__layout"><div class="share-icons"><span class="share-icons__title">Поделиться</span><a class="share share_tw" href="https://twitter.com/share?url=https%3A%2F%2Flearn.javascript.ru%2Fobject"></a><a class="share share_fb" href="https://www.facebook.com/sharer/sharer.php?s=100&amp;p%5Burl%5D=https%3A%2F%2Flearn.javascript.ru%2Fobject"></a><a class="share share_gp" href="https://plus.google.com/share?url=https%3A%2F%2Flearn.javascript.ru%2Fobject"></a><a class="share share_vk" href="https://vkontakte.ru/share.php?url=https%3A%2F%2Flearn.javascript.ru%2Fobject"></a></div><div class="article-tablet-foot__map"><a class="map" href="https://learn.javascript.ru/tutorial/map" data-action="tutorial-map"><span class="map__text">Карта учебника</span></a></div></div></div><div class="banner-bottom" style="display: flex;"><div class="banner-bottom__text">Проводим <a href="https://learn.javascript.ru/courses">курсы по Javascript и фреймворкам</a>.</div><button class="banner-bottom__close" data-banner-close="Courses" data-banner-close-message="Эта информация больше не будет выводиться." title="не показывать"></button></div><script>!!1&&"hideBannerCourses"in localStorage||(document.querySelector(".banner-bottom").style.display="flex");</script><div class="comments formatted" id="comments"><div class="comments__header"><h2 class="comments__header-title"><a href="https://learn.javascript.ru/object#comments" name="comments">Комментарии</a></h2><div class="comments__read-before"><span class="comments__read-before-link">перед тем как писать…</span><div class="comments__read-before-popup"><div class="comments__read-before-popup-i"><ul><li>Приветствуются комментарии, содержащие дополнения и вопросы по статье, и ответы на них.</li><li>Для одной строки кода используйте тег <code>&lt;code&gt;</code>, для нескольких строк кода&nbsp;— тег <code>&lt;pre&gt;</code>, если больше 10 строк&nbsp;— ссылку на песочницу (<a href="https://plnkr.co/edit/?p=preview">plnkr</a>, <a href="http://jsbin.com/">JSBin</a>, <a href="http://codepen.io/">codepen</a>…)</li><li>Если что-то непонятно в статье&nbsp;— пишите, что именно и с какого места.</li></ul></div></div></div></div><div id="disqus_thread"></div><script>var disqus_config = function() { if (!this.page) this.page = {}; Object.assign(this.page, {"url":"https:\/\/learn.javascript.ru\/object","identifier":"\/object"}); };</script><script>var disqus_shortname = "learnjavascriptru";</script><script>var disqus_enabled = true;</script></div></main></div><div class="sidebar page__sidebar sidebar sidebar_sticky-footer" style="top: 64px;"><button class="sidebar__toggle" data-sidebar-toggle=""></button><a class="map" href="https://learn.javascript.ru/tutorial/map" data-action="tutorial-map" data-tooltip="Карта учебника"></a><div class="sidebar__inner"><div class="sidebar__content"><div class="sidebar__section"><h4 class="sidebar__section-title">Раздел</h4><nav class="sidebar__navigation"><ul class="sidebar__navigation-links"><li class="sidebar__navigation-link"><a class="sidebar__link" href="https://learn.javascript.ru/data-structures">Структуры данных</a></li></ul></nav></div><div class="sidebar__section"><h4 class="sidebar__section-title">Навигация по уроку</h4><nav class="sidebar__navigation"><ul class="sidebar__navigation-links"><li class="sidebar__navigation-link"><a class="sidebar__link" href="https://learn.javascript.ru/object#assotsiativnye-massivy">Ассоциативные массивы</a></li><li class="sidebar__navigation-link"><a class="sidebar__link" href="https://learn.javascript.ru/object#sozdanie-obektov">Создание объектов</a></li><li class="sidebar__navigation-link"><a class="sidebar__link" href="https://learn.javascript.ru/object#operatsii-s-obektom">Операции с объектом</a></li><li class="sidebar__navigation-link"><a class="sidebar__link" href="https://learn.javascript.ru/object#kompaktnoe-predstavlenie-obektov">Компактное представление объектов</a></li><li class="sidebar__navigation-link"><a class="sidebar__link" href="https://learn.javascript.ru/object#itogo">Итого</a></li></ul></nav></div><div class="sidebar__section"><nav class="sidebar__navigation"><ul class="sidebar__navigation-links"><li class="sidebar__navigation-link"><a class="sidebar__link" href="https://learn.javascript.ru/object#tasks">Задачи (1)</a></li><li class="sidebar__navigation-link"><a class="sidebar__link" href="https://learn.javascript.ru/object#comments">Комментарии</a></li></ul></nav></div><div class="sidebar__section"><div class="sidebar__section-title">Поделиться</div><a class="share share_tw sidebar__share" href="https://twitter.com/share?url=https%3A%2F%2Flearn.javascript.ru%2Fobject"></a><a class="share share_fb sidebar__share" href="https://www.facebook.com/sharer/sharer.php?s=100&amp;p[url]=https%3A%2F%2Flearn.javascript.ru%2Fobject"></a><a class="share share_gp sidebar__share" href="https://plus.google.com/share?url=https%3A%2F%2Flearn.javascript.ru%2Fobject"></a><a class="share share_vk sidebar__share" href="https://vkontakte.ru/share.php?url=https%3A%2F%2Flearn.javascript.ru%2Fobject"></a></div><div class="sidebar__section"><a class="sidebar__link" href="https://github.com/iliakan/javascript-tutorial-ru/blob/master/1-js/4-data-structures/4-object/article.md">Редактировать на Github</a></div></div></div></div></div></div><div class="page-footer"><ul class="page-footer__list"><li class="page-footer__item page-footer__item_copy">©&nbsp;2007—2019&nbsp; Илья Кантор</li><li class="page-footer__item page-footer__item_contact"><a class="page-footer__link" href="https://learn.javascript.ru/about#contact-us">связаться с нами</a></li><li class="page-footer__item page-footer__item_terms"><a class="page-footer__link" href="https://learn.javascript.ru/terms">пользовательское соглашение</a></li><li class="page-footer__item page-footer__item_privacy"><a class="page-footer__link" href="https://learn.javascript.ru/privacy">политика конфиденциальности</a></li><li class="page-footer__item page-footer__item_slack"><a class="page-footer__slack" href="http://slack.javascript.ru/">slack-чат</a></li><li class="page-footer__item page-footer__item_about"><a class="page-footer__link" href="https://learn.javascript.ru/about">о проекте</a></li><li class="page-footer__item page-footer__item_source"><a class="page-footer__link" rel="nofollow" href="http://github.com/iliakan/javascript-tutorial-ru">open source</a></li></ul></div></body></html>

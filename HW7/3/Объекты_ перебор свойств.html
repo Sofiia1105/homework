@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<!-- saved from url=(0041)https://learn.javascript.ru/object-for-in -->
+<html lang="ru" class="working-hover"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><script type="text/javascript" async="" src="./Объекты_ перебор свойств_files/js"></script><script>window.currentUser = null;</script><script>window.rateUsdToNative = 65.928;</script><title itemprop="name">Объекты: перебор свойств</title><link href="./Объекты_ перебор свойств_files/styles.9eaf7fd5767b03e33acd.css" rel="stylesheet"><meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, minimum-scale=1.0"><meta name="apple-mobile-web-app-capable" content="yes"><!-- chrome autotranslate is enabled only for "en" main version--><meta name="google" content="notranslate"><script>if (window.devicePixelRatio > 1) document.cookie = 'pixelRatio=' + window.devicePixelRatio + ';path=/;expires=Tue, 19 Jan 2038 03:14:07 GMT';</script><link href="./Объекты_ перебор свойств_files/css" rel="stylesheet"><link rel="apple-touch-icon-precomposed" href="https://learn.javascript.ru/img/favicon/apple-touch-icon-precomposed.png"><link rel="canonical" href="https://learn.javascript.ru/object-for-in"><meta name="msapplication-TileColor" content="#222A2C"><meta name="msapplication-TileImage" content="/img/favicon/tileicon.png"><link rel="icon" href="https://learn.javascript.ru/img/favicon/favicon.png"><meta itemprop="image" content="https://learn.javascript.ru/img/site_preview_ru_512x512.png"><meta property="og:title" content="Объекты: перебор свойств"><meta property="og:image" content="https://learn.javascript.ru/img/site_preview_ru_1200x630.png"><meta property="og:image:type" content="image/png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="fb:admins" content="100001562528165"><meta name="twitter:card" content="summary"><meta name="twitter:title" content="Объекты: перебор свойств"><meta name="twitter:site" content="@iliakan"><meta name="twitter:creator" content="@iliakan"><meta name="twitter:image" content="https://learn.javascript.ru/img/site_preview_ru_512x512.png"><link rel="prev" href="https://learn.javascript.ru/object"><link rel="next" href="https://learn.javascript.ru/object-reference"><script>window.GA_ID = "UA-2056213-16";</script><script>window.GTM_ID = 'GTM-WD2DZPG'</script><script>window.YANDEX_METRIKA_ID = 17649010;</script><script>window.GoogleAnalyticsObject="ga",window.ga=function(){window.ga.q.push(arguments)},window.ga.q=[],window.ga.l=Date.now(),ga("create",GA_ID,"auto"),window.GTM_ID&&ga("require",GTM_ID),window.currentUser?ga("set","&uid",currentUser.id):ga("set","anonymizeIp",!0),window.addEventListener("error",function(e){var r=(e.filename||e.errorUrl)+": "+(e.lineno||e.errorLine),n=e.stack||e.error&&e.error.stack;ga("send","exception",{exDescription:e.message+" "+r+" "+n,exFatal:!0})});</script><script src="./Объекты_ перебор свойств_files/analytics.js.Без названия" async=""></script><script>ga('send', 'pageview');</script><script>window.metrika={reachGoal:function(){}},window.yandex_metrika_callbacks=[function(){try{window.metrika=new Ya.Metrika({id:YANDEX_METRIKA_ID,webvisor:!0,clickmap:!0,params:{user:window.currentUser&&window.currentUser.id}}),metrika.trackLinks({delay:150}),window.addEventListener("error",function(r){window.metrika.reachGoal("JSERROR",{src:(r.filename||r.errorUrl)+": "+(r.lineno||r.errorLine),stack:r.stack||r.error&&r.error.stack,message:r.message})})}catch(r){}}];</script><script src="https://mc.yandex.ru/metrika/watch.js" async=""></script><script>window.RECAPTCHA_ID = "6Lf9NyETAAAAACZlg-a9Us2SxvYbeVC1ROWaWv4O";</script><script src="./Объекты_ перебор свойств_files/init.9eaf7fd5767b03e33acd.js.Без названия"></script><script src="./Объекты_ перебор свойств_files/head.9eaf7fd5767b03e33acd.js.Без названия" defer=""></script><meta property="og:title" content="Объекты: перебор свойств"><meta property="og:type" content="article"><script src="./Объекты_ перебор свойств_files/tutorial.9eaf7fd5767b03e33acd.js.Без названия" defer="" data-manual="1"></script><script src="./Объекты_ перебор свойств_files/footer.9eaf7fd5767b03e33acd.js.Без названия" defer=""></script><link id="avast_os_ext_custom_font" href="chrome-extension://eofcbnmajmjmplflapaojjnihcjkigck/common/ui/fonts/fonts.css" rel="stylesheet" type="text/css"></head><body class=""><script>window.fontTest();</script><span class="font-test" style=""></span><div class="page-wrapper page-wrapper_sidebar_on"><!--[if lt IE 10]><div style="color:red;text-align:center">Извините, IE&lt;10 не поддерживается, пожалуйста используйте более новый браузер.</div><![endif]--><div class="sitetoolbar sitetoolbar_tutorial"><div class="sitetoolbar__content"><div class="sitetoolbar__lang-switcher"><button class="sitetoolbar__dropdown-button" data-dropdown-toggler="">RU</button><div class="sitetoolbar__dropdown-wrap"><div class="sitetoolbar__dropdown-body"><div class="sitetoolbar__lang-switcher-body"><div class="supported-langs supported-langs_toolbar"><div class="supported-langs__text">Мы хотим сделать этот проект с открытым исходным кодом доступным для людей во всем мире. Пожалуйста, <a href="https://github.com/iliakan/javascript-tutorial-en" rel="noopener noreferrer" target="_blank">помогите нам перевести</a> это руководство на свой язык</div><div class="supported-langs__container"><ul class="supported-langs__list" style="height:128px"><li class="supported-langs__item"><a class="supported-langs__link" href="https://javascript.info/"><span class="supported-langs__brief">EN</span><span class="supported-langs__title">English</span></a></li><li class="supported-langs__item supported-langs__item_current"><a class="supported-langs__link" href="https://learn.javascript.ru/"><span class="supported-langs__brief">RU</span><span class="supported-langs__title">Русский</span></a></li><li class="supported-langs__item"><a class="supported-langs__link" href="https://zh.javascript.info/"><span class="supported-langs__brief">ZH</span><span class="supported-langs__title">简体中文</span></a></li><li class="supported-langs__item"><a class="supported-langs__link" href="https://ja.javascript.info/"><span class="supported-langs__brief">JA</span><span class="supported-langs__title">日本語</span></a></li></ul></div></div></div></div></div></div><div class="sitetoolbar__logo-wrap"><a class="sitetoolbar__link sitetoolbar__link_logo" href="https://learn.javascript.ru/"><object type="image/svg+xml" class="sitetoolbar__logo sitetoolbar__logo_normal" data="./Объекты_ перебор свойств_files/sitetoolbar__logo_ru.svg" style="left: 0px; top: 0px; position: absolute;"></object><img class="sitetoolbar__logo sitetoolbar__logo_normal" src="./Объекты_ перебор свойств_files/sitetoolbar__logo_ru.svg" width="171" alt="" role="presentation" style="visibility: hidden;"><object type="image/svg+xml" class="sitetoolbar__logo sitetoolbar__logo_small" data="./Объекты_ перебор свойств_files/sitetoolbar__logo_small_ru.svg" style="left: 0px; top: 0px; position: absolute;"></object><img class="sitetoolbar__logo sitetoolbar__logo_small" src="./Объекты_ перебор свойств_files/sitetoolbar__logo_small_ru.svg" width="80" alt="" role="presentation"><script>Array.prototype.forEach.call(document.querySelectorAll("img.sitetoolbar__logo"),function(e){let t=document.createElement("object");t.type="image/svg+xml",t.className=e.className,t.style.cssText="left:0;top:0;position:absolute",t.onload=function(){t.onload=null,e.style.visibility="hidden"},t.data=e.src,e.parentNode.insertBefore(t,e)});</script></a></div><div class="sitetoolbar__nav-toggle-wrap"><button class="sitetoolbar__nav-toggle" type="button"></button></div><nav class="sitetoolbar__sections"><ul class="sitetoolbar__sections-list"><li class="sitetoolbar__section sitetoolbar__section_current"><a class="sitetoolbar__link" href="https://learn.javascript.ru/">Учебник</a></li><li class="sitetoolbar__section"><a class="sitetoolbar__link" href="https://learn.javascript.ru/courses">Курсы</a></li><li class="sitetoolbar__section"><a class="sitetoolbar__link" href="https://javascript.ru/forum/">Форум</a></li><li class="sitetoolbar__section"><a class="sitetoolbar__link" href="https://es5.javascript.ru/">ES5</a></li><li class="sitetoolbar__section"><a class="sitetoolbar__link" href="https://learn.javascript.ru/quiz">Тесты знаний</a></li><li class="sitetoolbar__section"><a class="sitetoolbar__link" href="https://learn.javascript.ru/jobs">Стажировки</a></li><li class="sitetoolbar__section sitetoolbar__section_dropdown"><button class="sitetoolbar__dropdown-button" data-dropdown-toggler="">Скринкасты</button><div class="sitetoolbar__dropdown-wrap"><div class="sitetoolbar__dropdown-body"><ul class="sitetoolbar__dropdown-items"><li class="sitetoolbar__dropdown-item"><a class="sitetoolbar__secondary-link sitetoolbar__dropdown-link" href="https://learn.javascript.ru/screencast/nodejs">Node.js</a></li><li class="sitetoolbar__dropdown-item"><a class="sitetoolbar__secondary-link sitetoolbar__dropdown-link" href="https://learn.javascript.ru/screencast/webpack">Webpack</a></li><li class="sitetoolbar__dropdown-item"><a class="sitetoolbar__secondary-link sitetoolbar__dropdown-link" href="https://learn.javascript.ru/screencast/gulp">Gulp 4</a></li><li class="sitetoolbar__dropdown-item"><a class="sitetoolbar__secondary-link sitetoolbar__dropdown-link" href="https://learn.javascript.ru/screencast/react">React.js</a></li><li class="sitetoolbar__dropdown-item"><a class="sitetoolbar__secondary-link sitetoolbar__dropdown-link" href="https://learn.javascript.ru/screencast/angular">Angular</a></li><li class="sitetoolbar__dropdown-item"><a class="sitetoolbar__secondary-link sitetoolbar__dropdown-link" href="https://learn.javascript.ru/screencast/git">Git</a></li></ul></div></div></li></ul></nav><div class="sitetoolbar__book-wrap"><a class="buy-book-button" href="https://learn.javascript.ru/ebook"><span class="buy-book-button__extra-text">Купить</span>EPUB/PDF</a></div><div class="sitetoolbar__login-wrap"><button class="sitetoolbar__login" data-action-login=""></button></div><div class="sitetoolbar__search-wrap"><div class="sitetoolbar__search-content"><form class="sitetoolbar__search" method="GET" action="https://learn.javascript.ru/search"><button class="sitetoolbar__search-toggle" type="button"></button><div class="sitetoolbar__search-input"><div class="text-input"><input class="text-input__control" name="query" placeholder="Искать на Javascript.ru" required="required" type="text"></div><button class="sitetoolbar__find" type="submit">Найти</button></div></form></div></div></div><div class="tablet-menu"><div class="tablet-menu__line"><div class="tablet-menu__content"><select class="tablet-menu__nav input-select input-select input-select_small" onchange="if(this.value) window.location.href=this.value"><option value="/" selected="">Учебник</option><option value="/courses">Курсы</option><option value="https://javascript.ru/forum/">Форум</option><option value="https://es5.javascript.ru">ES5</option><option value="/quiz">Тесты знаний</option><option value="/jobs">Стажировки</option></select></div></div><div class="tablet-menu__line"><div class="tablet-menu__content"><form class="tablet-menu-search" action="https://learn.javascript.ru/search/"><input class="tablet-menu-search__input" type="search" name="query" placeholder="Поиск в учебнике" required="required"><button class="tablet-menu-search__button" type="submit" name="type" value="articles">Поиск</button></form></div></div><div class="tablet-menu__line"><div class="tablet-menu__content"><a class="map" href="https://learn.javascript.ru/tutorial/map" data-action="tutorial-map"><span class="map__text">Карта учебника</span></a></div></div><div class="tablet-menu__line"><div class="tablet-menu__content"><div class="share-icons"><span class="share-icons__title">Поделиться</span><a class="share share_tw" href="https://twitter.com/share?url=https%3A%2F%2Flearn.javascript.ru%2Fobject-for-in"></a><a class="share share_fb" href="https://www.facebook.com/sharer/sharer.php?s=100&amp;p%5Burl%5D=https%3A%2F%2Flearn.javascript.ru%2Fobject-for-in"></a><a class="share share_gp" href="https://plus.google.com/share?url=https%3A%2F%2Flearn.javascript.ru%2Fobject-for-in"></a><a class="share share_vk" href="https://vkontakte.ru/share.php?url=https%3A%2F%2Flearn.javascript.ru%2Fobject-for-in"></a></div></div></div><div class="tablet-menu__line"><div class="tablet-menu__content"><select class="tablet-menu__nav input-select input-select input-select_small" onchange="if(this.value) window.location.href=this.value"><option value="https://javascript.info/">English</option><option value="https://learn.javascript.ru/" selected="">Русский</option><option value="https://zh.javascript.info/">简体中文</option><option value="https://ja.javascript.info/">日本語</option></select></div></div></div><progress class="tutorial-progress" data-sticky="" value="34" max="86" data-tooltip="Урок 34 из 86"></progress></div><div class="page page_sidebar_on page_inner_padding page_sidebar-animation-on"><script>if(localStorage.noSidebar){document.querySelector(".page").classList.remove("page_sidebar_on");var pageWrapper=document.querySelector(".page-wrapper");pageWrapper&&pageWrapper.classList.remove("page-wrapper_sidebar_on")}setTimeout(function(){document.querySelector(".page").classList.add("page_sidebar-animation-on")},0);</script><div class="page__inner"><main class="main main_width-limit"><header class="main__header"><div class="main__header-inner"><ol class="breadcrumbs"><li class="breadcrumbs__item breadcrumbs__item_home" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb" itemref="breadcrumb-1"><a class="breadcrumbs__link" href="https://learn.javascript.ru/" itemprop="url"><span class="breadcrumbs__hidden-text" itemprop="title">Учебник</span></a></li><li class="breadcrumbs__item" id="breadcrumb-1" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb" itemref="breadcrumb-2" itemprop="child"><a class="breadcrumbs__link" href="https://learn.javascript.ru/js" itemprop="url"><span itemprop="title">Язык JavaScript</span></a></li><li class="breadcrumbs__item" id="breadcrumb-2" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb" itemprop="child"><a class="breadcrumbs__link" href="https://learn.javascript.ru/data-structures" itemprop="url"><span itemprop="title">Структуры данных</span></a></li></ol><h1 class="main__header-title">Объекты: перебор свойств</h1></div></header><div class="content"><article class="formatted" itemscope="" itemtype="http://schema.org/TechArticle"><meta itemprop="name" content="Объекты: перебор свойств"><div itemprop="author" itemscope="" itemtype="http://schema.org/Person"><meta itemprop="email" content="iliakan@gmail.com"><meta itemprop="name" content="Ilya Kantor"></div><div itemprop="articleBody"><p>Для перебора всех свойств из объекта используется цикл по свойствам <code>for..in</code>. Эта синтаксическая конструкция отличается от рассмотренного ранее цикла <code>for(;;)</code>.</p>
+<h2><a class="main__anchor" name="for..in" href="https://learn.javascript.ru/object-for-in#for..in">for..in</a></h2><p>Синтаксис:</p>
+<div data-trusted="1" class="code-example" data-prism-highlighted="1">
+      <div class="codebox code-example__codebox">
+        
+        <div class="codebox__code" data-code="1">
+          <pre class="line-numbers  language-javascript"><code class=" language-javascript"><code class="token keyword">for</code> <code class="token punctuation">(</code>key <code class="token keyword">in</code> obj<code class="token punctuation">)</code> <code class="token punctuation">{</code>
+  <code class="token comment">/* ... делать что-то с obj[key] ... */</code>
+<code class="token punctuation">}</code></code><span class="line-numbers-rows"><span></span><span></span><span></span></span></pre>
+        </div>
+      </div>
+      
+      </div><p>При этом <code>for..in</code> последовательно переберёт свойства объекта <code>obj</code>, имя каждого свойства будет записано в  <code>key</code> и вызвано тело цикла.</p>
+<div class="important important_smart">
+            <div class="important__header"><span class="important__type">Объявление переменной в цикле <code>for (var key in obj)</code></span></div>
+            <div class="important__content"><p>Вспомогательную переменную <code>key</code> можно объявить прямо в цикле:</p>
+<div data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:0,&quot;cols&quot;:[{&quot;start&quot;:5,&quot;end&quot;:12}]}]" data-prism-highlighted="1">
+      <div class="codebox code-example__codebox">
+        
+        <div class="codebox__code" data-code="1">
+          <pre class="line-numbers  language-javascript"><code class="block-highlight block-highlight_inline" data-start="0">     <code class="mask-inline">       </code></code><code class=" language-javascript"><code class="token keyword">for</code> <code class="token punctuation">(</code><code class="token keyword">var</code> key <code class="token keyword">in</code> menu<code class="token punctuation">)</code> <code class="token punctuation">{</code>
+  <code class="token comment">// ...</code>
+<code class="token punctuation">}</code></code><span class="line-numbers-rows"><span></span><span></span><span></span></span></pre>
+        </div>
+      </div>
+      
+      </div><p>Так иногда пишут для краткости кода. Можно использовать и любое другое название, кроме <code>key</code>, например <code>for(var propName in menu)</code>.</p>
+</div></div>
+<p>Пример итерации по свойствам:</p>
+<div data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:10,&quot;end&quot;:10}]" data-prism-highlighted="1">
+      <div class="codebox code-example__codebox">
+        
+        <div class="toolbar codebox__toolbar">
+          <div class="toolbar__tool">
+            <a href="https://learn.javascript.ru/object-for-in#" title="выполнить" data-action="run" class="toolbar__button toolbar__button_run"></a>
+          </div>
+          <div class="toolbar__tool">
+            <a href="https://learn.javascript.ru/object-for-in#" title="открыть в песочнице" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a>
+          </div>
+        </div>
+        <div class="codebox__code" data-code="1">
+          <pre class="line-numbers  language-javascript"><code class="block-highlight" data-start="10">
+
+
+
+
+
+
+
+
+
+<code class="mask">
+</code></code><code class=" language-javascript"><code class="token keyword">var</code> menu <code class="token operator">=</code> <code class="token punctuation">{</code>
+  width<code class="token punctuation">:</code> <code class="token number">300</code><code class="token punctuation">,</code>
+  height<code class="token punctuation">:</code> <code class="token number">200</code><code class="token punctuation">,</code>
+  title<code class="token punctuation">:</code> <code class="token string">"Menu"</code>
+<code class="token punctuation">}</code><code class="token punctuation">;</code>
+
+<code class="token keyword">for</code> <code class="token punctuation">(</code><code class="token keyword">var</code> key <code class="token keyword">in</code> menu<code class="token punctuation">)</code> <code class="token punctuation">{</code>
+  <code class="token comment">// этот код будет вызван для каждого свойства объекта</code>
+  <code class="token comment">// ..и выведет имя свойства и его значение</code>
+
+  <code class="token function">alert</code><code class="token punctuation">(</code> <code class="token string">"Ключ: "</code> <code class="token operator">+</code> key <code class="token operator">+</code> <code class="token string">" значение: "</code> <code class="token operator">+</code> menu<code class="token punctuation">[</code>key<code class="token punctuation">]</code> <code class="token punctuation">)</code><code class="token punctuation">;</code>
+<code class="token punctuation">}</code></code><span class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></pre>
+        </div>
+      </div>
+      
+      </div><p>Обратите внимание, мы использовали квадратные скобки <code>menu[key]</code>. Как уже говорилось, если имя свойства хранится в переменной, то обратиться к нему можно только так, не через точку.</p>
+<h2><a class="main__anchor" name="kolichestvo-svoystv-v-obekte" href="https://learn.javascript.ru/object-for-in#kolichestvo-svoystv-v-obekte">Количество свойств в объекте</a></h2><p>Как узнать, сколько свойств хранит объект?</p>
+<p>Готового метода для этого нет.</p>
+<p>Самый кросс-браузерный способ – это сделать цикл по свойствам и посчитать, вот так:</p>
+<div data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:6,&quot;end&quot;:10}]" data-prism-highlighted="1">
+      <div class="codebox code-example__codebox">
+        
+        <div class="toolbar codebox__toolbar">
+          <div class="toolbar__tool">
+            <a href="https://learn.javascript.ru/object-for-in#" title="выполнить" data-action="run" class="toolbar__button toolbar__button_run"></a>
+          </div>
+          <div class="toolbar__tool">
+            <a href="https://learn.javascript.ru/object-for-in#" title="открыть в песочнице" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a>
+          </div>
+        </div>
+        <div class="codebox__code" data-code="1">
+          <pre class="line-numbers  language-javascript"><code class="block-highlight" data-start="6">
+
+
+
+
+
+<code class="mask">
+
+
+
+
+</code></code><code class=" language-javascript"><code class="token keyword">var</code> menu <code class="token operator">=</code> <code class="token punctuation">{</code>
+  width<code class="token punctuation">:</code> <code class="token number">300</code><code class="token punctuation">,</code>
+  height<code class="token punctuation">:</code> <code class="token number">200</code><code class="token punctuation">,</code>
+  title<code class="token punctuation">:</code> <code class="token string">"Menu"</code>
+<code class="token punctuation">}</code><code class="token punctuation">;</code>
+
+<code class="token keyword">var</code> counter <code class="token operator">=</code> <code class="token number">0</code><code class="token punctuation">;</code>
+
+<code class="token keyword">for</code> <code class="token punctuation">(</code><code class="token keyword">var</code> key <code class="token keyword">in</code> menu<code class="token punctuation">)</code> <code class="token punctuation">{</code>
+  counter<code class="token operator">++</code><code class="token punctuation">;</code>
+<code class="token punctuation">}</code>
+
+<code class="token function">alert</code><code class="token punctuation">(</code> <code class="token string">"Всего свойств: "</code> <code class="token operator">+</code> counter <code class="token punctuation">)</code><code class="token punctuation">;</code></code><span class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></pre>
+        </div>
+      </div>
+      
+      </div><p>В следующих главах мы пройдём массивы и познакомимся с другим, более коротким, вызовом: <code>Object.keys(menu).length</code>.</p>
+<h2><a class="main__anchor" name="v-kakom-poryadke-perebirayutsya-svoystva" href="https://learn.javascript.ru/object-for-in#v-kakom-poryadke-perebirayutsya-svoystva">В каком порядке перебираются свойства?</a></h2><p>Для примера, рассмотрим объект, который задаёт список опций для выбора страны:</p>
+<div data-trusted="1" class="code-example" data-prism-highlighted="1">
+      <div class="codebox code-example__codebox">
+        
+        <div class="codebox__code" data-code="1">
+          <pre class="line-numbers  language-javascript"><code class=" language-javascript"><code class="token keyword">var</code> codes <code class="token operator">=</code> <code class="token punctuation">{</code>
+  <code class="token comment">// телефонные коды в формате "код страны": "название"</code>
+  <code class="token string">"7"</code><code class="token punctuation">:</code> <code class="token string">"Россия"</code><code class="token punctuation">,</code>
+  <code class="token string">"38"</code><code class="token punctuation">:</code> <code class="token string">"Украина"</code><code class="token punctuation">,</code>
+  <code class="token comment">// ..,</code>
+  <code class="token string">"1"</code><code class="token punctuation">:</code> <code class="token string">"США"</code>
+<code class="token punctuation">}</code><code class="token punctuation">;</code></code><span class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></pre>
+        </div>
+      </div>
+      
+      </div><p>Здесь мы предполагаем, что большинство посетителей из России, и поэтому начинаем с <code>7</code>, это зависит от проекта.</p>
+<p>При выборе телефонного кода мы хотели бы предлагать варианты, начиная с первого. Обычно на основе списка генерируется <code>select</code>, но здесь нам важно не это, а важно другое.</p>
+<p><strong>Правда ли, что при переборе <code>for(key in codes)</code> ключи <code>key</code> будут перечислены именно в том порядке, в котором заданы?</strong></p>
+<p><strong>По стандарту – нет. Но некоторое соглашение об этом, всё же, есть.</strong></p>
+<p>Соглашение говорит, что если имя свойства – нечисловая строка, то такие ключи всегда перебираются в том же порядке, в каком присваивались. Так получилось по историческим причинам и изменить это сложно: поломается много готового кода.</p>
+<p>С другой стороны, если имя свойства – число или числовая строка, то все современные браузеры сортируют такие свойства в целях внутренней оптимизации.</p>
+<p>К примеру, рассмотрим объект с заведомо нечисловыми свойствами:</p>
+<div data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:6,&quot;end&quot;:6}]" data-prism-highlighted="1">
+      <div class="codebox code-example__codebox">
+        
+        <div class="toolbar codebox__toolbar">
+          <div class="toolbar__tool">
+            <a href="https://learn.javascript.ru/object-for-in#" title="выполнить" data-action="run" class="toolbar__button toolbar__button_run"></a>
+          </div>
+          <div class="toolbar__tool">
+            <a href="https://learn.javascript.ru/object-for-in#" title="открыть в песочнице" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a>
+          </div>
+        </div>
+        <div class="codebox__code" data-code="1">
+          <pre class="line-numbers  language-javascript"><code class="block-highlight" data-start="6">
+
+
+
+
+
+<code class="mask">
+</code></code><code class=" language-javascript"><code class="token keyword">var</code> user <code class="token operator">=</code> <code class="token punctuation">{</code>
+  name<code class="token punctuation">:</code> <code class="token string">"Вася"</code><code class="token punctuation">,</code>
+  surname<code class="token punctuation">:</code> <code class="token string">"Петров"</code>
+<code class="token punctuation">}</code><code class="token punctuation">;</code>
+user<code class="token punctuation">.</code>age <code class="token operator">=</code> <code class="token number">25</code><code class="token punctuation">;</code>
+
+<code class="token comment">// порядок перебора соответствует порядку присвоения свойства</code>
+<code class="token keyword">for</code> <code class="token punctuation">(</code><code class="token keyword">var</code> prop <code class="token keyword">in</code> user<code class="token punctuation">)</code> <code class="token punctuation">{</code>
+  <code class="token function">alert</code><code class="token punctuation">(</code> prop <code class="token punctuation">)</code><code class="token punctuation">;</code> <code class="token comment">// name, surname, age</code>
+<code class="token punctuation">}</code></code><span class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></pre>
+        </div>
+      </div>
+      
+      </div><p>А теперь – что будет, если перебрать объект с кодами?</p>
+<div data-trusted="1" class="code-example" data-prism-highlighted="1">
+      <div class="codebox code-example__codebox">
+        
+        <div class="toolbar codebox__toolbar">
+          <div class="toolbar__tool">
+            <a href="https://learn.javascript.ru/object-for-in#" title="выполнить" data-action="run" class="toolbar__button toolbar__button_run"></a>
+          </div>
+          <div class="toolbar__tool">
+            <a href="https://learn.javascript.ru/object-for-in#" title="открыть в песочнице" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a>
+          </div>
+        </div>
+        <div class="codebox__code" data-code="1">
+          <pre class="line-numbers  language-javascript"><code class=" language-javascript"><code class="token keyword">var</code> codes <code class="token operator">=</code> <code class="token punctuation">{</code>
+  <code class="token comment">// телефонные коды в формате "код страны": "название"</code>
+  <code class="token string">"7"</code><code class="token punctuation">:</code> <code class="token string">"Россия"</code><code class="token punctuation">,</code>
+  <code class="token string">"38"</code><code class="token punctuation">:</code> <code class="token string">"Украина"</code><code class="token punctuation">,</code>
+  <code class="token string">"1"</code><code class="token punctuation">:</code> <code class="token string">"США"</code>
+<code class="token punctuation">}</code><code class="token punctuation">;</code>
+
+<code class="token keyword">for</code> <code class="token punctuation">(</code><code class="token keyword">var</code> code <code class="token keyword">in</code> codes<code class="token punctuation">)</code> <code class="token function">alert</code><code class="token punctuation">(</code> code <code class="token punctuation">)</code><code class="token punctuation">;</code> <code class="token comment">// 1, 7, 38</code></code><span class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></pre>
+        </div>
+      </div>
+      
+      </div><p>При запуске этого кода в современном браузере мы увидим, что на первое место попал код США!</p>
+<p>Нарушение порядка возникло, потому что ключи численные. Интерпретатор JavaScript видит, что строка на самом деле является числом и преобразует ключ в немного другой внутренний формат. Дополнительным эффектом внутренних оптимизаций является сортировка.</p>
+<p><strong>А что, если мы хотим, чтобы порядок был именно таким, какой мы задали?</strong></p>
+<p>Это возможно. Можно применить небольшой хак, который заключается в том, чтобы сделать все ключи нечисловыми, например, добавим в начало дополнительный символ <code>'+'</code>:</p>
+<div data-trusted="1" class="code-example" data-prism-highlighted="1">
+      <div class="codebox code-example__codebox">
+        
+        <div class="toolbar codebox__toolbar">
+          <div class="toolbar__tool">
+            <a href="https://learn.javascript.ru/object-for-in#" title="выполнить" data-action="run" class="toolbar__button toolbar__button_run"></a>
+          </div>
+          <div class="toolbar__tool">
+            <a href="https://learn.javascript.ru/object-for-in#" title="открыть в песочнице" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a>
+          </div>
+        </div>
+        <div class="codebox__code" data-code="1">
+          <pre class="line-numbers  language-javascript"><code class=" language-javascript"><code class="token keyword">var</code> codes <code class="token operator">=</code> <code class="token punctuation">{</code>
+  <code class="token string">"+7"</code><code class="token punctuation">:</code> <code class="token string">"Россия"</code><code class="token punctuation">,</code>
+  <code class="token string">"+38"</code><code class="token punctuation">:</code> <code class="token string">"Украина"</code><code class="token punctuation">,</code>
+  <code class="token string">"+1"</code><code class="token punctuation">:</code> <code class="token string">"США"</code>
+<code class="token punctuation">}</code><code class="token punctuation">;</code>
+
+<code class="token keyword">for</code> <code class="token punctuation">(</code><code class="token keyword">var</code> code <code class="token keyword">in</code> codes<code class="token punctuation">)</code> <code class="token punctuation">{</code>
+  <code class="token keyword">var</code> value <code class="token operator">=</code> codes<code class="token punctuation">[</code>code<code class="token punctuation">]</code><code class="token punctuation">;</code>
+  code <code class="token operator">=</code> <code class="token operator">+</code>code<code class="token punctuation">;</code> <code class="token comment">// ..если нам нужно именно число, преобразуем: "+7" -&gt; 7</code>
+
+  <code class="token function">alert</code><code class="token punctuation">(</code> code <code class="token operator">+</code> <code class="token string">": "</code> <code class="token operator">+</code> value <code class="token punctuation">)</code><code class="token punctuation">;</code> <code class="token comment">// 7, 38, 1 во всех браузерах</code>
+<code class="token punctuation">}</code></code><span class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></pre>
+        </div>
+      </div>
+      
+      </div><h2><a class="main__anchor" name="itogo" href="https://learn.javascript.ru/object-for-in#itogo">Итого</a></h2><ul>
+<li>Цикл по ключам: <code>for (key in obj)</code>.</li>
+<li>Порядок перебора соответствует порядку объявления для нечисловых ключей, а числовые – сортируются (в современных браузерах).</li>
+<li>Если нужно, чтобы порядок перебора числовых ключей соответствовал их объявлению в объекте, то используют трюк: числовые ключи заменяют на похожие, но содержащие не только цифры. Например, добавляют в начало <code>+</code>, как описано в примере выше, а потом, в процессе обработки, преобразуют такие ключи в числа.</li>
+</ul>
+</div></article><div class="tasks formatted"><h2 class="tasks__title" id="tasks"><a class="tasks__title-anchor main__anchor main__anchor main__anchor_noicon" href="https://learn.javascript.ru/object-for-in#tasks">Задачи</a></h2><div class="task tasks__task"><div class="task__header"><div class="task__title-wrap"><h3 class="task__title"><a class="main__anchor" href="https://learn.javascript.ru/object-for-in#opredelite-pust-li-obekt" name="opredelite-pust-li-obekt">Определите, пуст ли объект</a></h3><a class="task__open-link" href="https://learn.javascript.ru/task/is-empty" target="_blank"></a></div><div class="task__header-note"><span class="task__importance" title="Насколько эта задача важна для освоения материала, от 1 до 5">важность: 5</span></div><div class="task__content"><p>Создайте функцию <code>isEmpty(obj)</code>, которая возвращает <code>true</code>, если в объекте нет свойств и <code>false</code> – если хоть одно свойство есть.</p>
+<p>Работать должно так:</p>
+<div data-trusted="1" class="code-example" data-prism-highlighted="1">
+      <div class="codebox code-example__codebox">
+        
+        <div class="codebox__code" data-code="1">
+          <pre class="line-numbers  language-javascript"><code class=" language-javascript"><code class="token keyword">function</code> <code class="token function">isEmpty</code><code class="token punctuation">(</code>obj<code class="token punctuation">)</code> <code class="token punctuation">{</code>
+  <code class="token comment">/* ваш код */</code>
+<code class="token punctuation">}</code>
+
+<code class="token keyword">var</code> schedule <code class="token operator">=</code> <code class="token punctuation">{</code><code class="token punctuation">}</code><code class="token punctuation">;</code>
+
+<code class="token function">alert</code><code class="token punctuation">(</code> <code class="token function">isEmpty</code><code class="token punctuation">(</code>schedule<code class="token punctuation">)</code> <code class="token punctuation">)</code><code class="token punctuation">;</code> <code class="token comment">// true</code>
+
+schedule<code class="token punctuation">[</code><code class="token string">"8:30"</code><code class="token punctuation">]</code> <code class="token operator">=</code> <code class="token string">"подъём"</code><code class="token punctuation">;</code>
+
+<code class="token function">alert</code><code class="token punctuation">(</code> <code class="token function">isEmpty</code><code class="token punctuation">(</code>schedule<code class="token punctuation">)</code> <code class="token punctuation">)</code><code class="token punctuation">;</code> <code class="token comment">// false</code></code><span class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></pre>
+        </div>
+      </div>
+      
+      </div><p><a href="https://plnkr.co/edit/kuQqaZgljorqZxnmx3V1?p=preview" target="_blank" data-plunk-id="kuQqaZgljorqZxnmx3V1">Открыть песочницу с тестами для задачи.</a></p><button class="task__solution" type="button">решение</button><div class="task__answer"><div class="task__answer-content"><div data-trusted="1" class="code-example" data-prism-highlighted="1">
+      <div class="codebox code-example__codebox">
+        
+        <div class="toolbar codebox__toolbar">
+          <div class="toolbar__tool">
+            <a href="https://learn.javascript.ru/object-for-in#" title="выполнить" data-action="run" class="toolbar__button toolbar__button_run"></a>
+          </div>
+          <div class="toolbar__tool">
+            <a href="https://learn.javascript.ru/object-for-in#" title="открыть в песочнице" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a>
+          </div>
+        </div>
+        <div class="codebox__code" data-code="1">
+          <pre class="line-numbers  language-javascript"><code class=" language-javascript"><code class="token keyword">function</code> <code class="token function">isEmpty</code><code class="token punctuation">(</code>obj<code class="token punctuation">)</code> <code class="token punctuation">{</code>
+  <code class="token keyword">for</code> <code class="token punctuation">(</code><code class="token keyword">var</code> key <code class="token keyword">in</code> obj<code class="token punctuation">)</code> <code class="token punctuation">{</code>
+    <code class="token keyword">return</code> <code class="token boolean">false</code><code class="token punctuation">;</code>
+  <code class="token punctuation">}</code>
+  <code class="token keyword">return</code> <code class="token boolean">true</code><code class="token punctuation">;</code>
+<code class="token punctuation">}</code>
+
+<code class="token keyword">var</code> schedule <code class="token operator">=</code> <code class="token punctuation">{</code><code class="token punctuation">}</code><code class="token punctuation">;</code>
+
+<code class="token function">alert</code><code class="token punctuation">(</code> <code class="token function">isEmpty</code><code class="token punctuation">(</code>schedule<code class="token punctuation">)</code> <code class="token punctuation">)</code><code class="token punctuation">;</code> <code class="token comment">// true</code>
+
+schedule<code class="token punctuation">[</code><code class="token string">"8:30"</code><code class="token punctuation">]</code> <code class="token operator">=</code> <code class="token string">"подъём"</code><code class="token punctuation">;</code>
+
+<code class="token function">alert</code><code class="token punctuation">(</code> <code class="token function">isEmpty</code><code class="token punctuation">(</code>schedule<code class="token punctuation">)</code> <code class="token punctuation">)</code><code class="token punctuation">;</code> <code class="token comment">// false</code></code><span class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></pre>
+        </div>
+      </div>
+      
+      </div><p><a href="https://plnkr.co/edit/N2ymiK4OKzhemWP9p34E?p=preview" target="_blank" data-plunk-id="N2ymiK4OKzhemWP9p34E">Открыть решение с тестами в песочнице.</a></p></div><button class="close-button task__answer-close" type="button" title="закрыть"></button></div></div></div></div><div class="task tasks__task"><div class="task__header"><div class="task__title-wrap"><h3 class="task__title"><a class="main__anchor" href="https://learn.javascript.ru/object-for-in#summa-svoystv" name="summa-svoystv">Сумма свойств</a></h3><a class="task__open-link" href="https://learn.javascript.ru/task/sum-salaries" target="_blank"></a></div><div class="task__header-note"><span class="task__importance" title="Насколько эта задача важна для освоения материала, от 1 до 5">важность: 5</span></div><div class="task__content"><p>Есть объект <code>salaries</code> с зарплатами. Напишите код, который выведет сумму всех зарплат.</p>
+<p>Если объект пустой, то результат должен быть <code>0</code>.</p>
+<p>Например:</p>
+<div data-trusted="1" class="code-example" data-prism-highlighted="1">
+      <div class="codebox code-example__codebox">
+        
+        <div class="codebox__code" data-code="1">
+          <pre class="line-numbers  language-javascript"><code class=" language-javascript"><code class="token string">"use strict"</code><code class="token punctuation">;</code>
+
+<code class="token keyword">var</code> salaries <code class="token operator">=</code> <code class="token punctuation">{</code>
+  <code class="token string">"Вася"</code><code class="token punctuation">:</code> <code class="token number">100</code><code class="token punctuation">,</code>
+  <code class="token string">"Петя"</code><code class="token punctuation">:</code> <code class="token number">300</code><code class="token punctuation">,</code>
+  <code class="token string">"Даша"</code><code class="token punctuation">:</code> <code class="token number">250</code>
+<code class="token punctuation">}</code><code class="token punctuation">;</code>
+
+<code class="token comment">//... ваш код выведет 650</code></code><span class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></pre>
+        </div>
+      </div>
+      
+      </div><p>P.S. Сверху стоит <code>use strict</code>, чтобы не забыть объявить переменные.</p>
+<button class="task__solution" type="button">решение</button><div class="task__answer"><div class="task__answer-content"><div data-trusted="1" class="code-example" data-prism-highlighted="1">
+      <div class="codebox code-example__codebox">
+        
+        <div class="toolbar codebox__toolbar">
+          <div class="toolbar__tool">
+            <a href="https://learn.javascript.ru/object-for-in#" title="выполнить" data-action="run" class="toolbar__button toolbar__button_run"></a>
+          </div>
+          <div class="toolbar__tool">
+            <a href="https://learn.javascript.ru/object-for-in#" title="открыть в песочнице" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a>
+          </div>
+        </div>
+        <div class="codebox__code" data-code="1">
+          <pre class="line-numbers  language-javascript"><code class=" language-javascript"><code class="token string">"use strict"</code><code class="token punctuation">;</code>
+
+<code class="token keyword">var</code> salaries <code class="token operator">=</code> <code class="token punctuation">{</code>
+  <code class="token string">"Вася"</code><code class="token punctuation">:</code> <code class="token number">100</code><code class="token punctuation">,</code>
+  <code class="token string">"Петя"</code><code class="token punctuation">:</code> <code class="token number">300</code><code class="token punctuation">,</code>
+  <code class="token string">"Даша"</code><code class="token punctuation">:</code> <code class="token number">250</code>
+<code class="token punctuation">}</code><code class="token punctuation">;</code>
+
+<code class="token keyword">var</code> sum <code class="token operator">=</code> <code class="token number">0</code><code class="token punctuation">;</code>
+<code class="token keyword">for</code> <code class="token punctuation">(</code><code class="token keyword">var</code> name <code class="token keyword">in</code> salaries<code class="token punctuation">)</code> <code class="token punctuation">{</code>
+  sum <code class="token operator">+=</code> salaries<code class="token punctuation">[</code>name<code class="token punctuation">]</code><code class="token punctuation">;</code>
+<code class="token punctuation">}</code>
+
+<code class="token function">alert</code><code class="token punctuation">(</code> sum <code class="token punctuation">)</code><code class="token punctuation">;</code></code><span class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></pre>
+        </div>
+      </div>
+      
+      </div></div><button class="close-button task__answer-close" type="button" title="закрыть"></button></div></div></div></div><div class="task tasks__task"><div class="task__header"><div class="task__title-wrap"><h3 class="task__title"><a class="main__anchor" href="https://learn.javascript.ru/object-for-in#svoystvo-s-naibolshim-znacheniem" name="svoystvo-s-naibolshim-znacheniem">Свойство с наибольшим значением</a></h3><a class="task__open-link" href="https://learn.javascript.ru/task/max-salary" target="_blank"></a></div><div class="task__header-note"><span class="task__importance" title="Насколько эта задача важна для освоения материала, от 1 до 5">важность: 5</span></div><div class="task__content"><p>Есть объект <code>salaries</code> с зарплатами. Напишите код, который выведет имя сотрудника, у которого самая большая зарплата.</p>
+<p>Если объект пустой, то пусть он выводит «нет сотрудников».</p>
+<p>Например:</p>
+<div data-trusted="1" class="code-example" data-prism-highlighted="1">
+      <div class="codebox code-example__codebox">
+        
+        <div class="codebox__code" data-code="1">
+          <pre class="line-numbers  language-javascript"><code class=" language-javascript"><code class="token string">"use strict"</code><code class="token punctuation">;</code>
+
+<code class="token keyword">var</code> salaries <code class="token operator">=</code> <code class="token punctuation">{</code>
+  <code class="token string">"Вася"</code><code class="token punctuation">:</code> <code class="token number">100</code><code class="token punctuation">,</code>
+  <code class="token string">"Петя"</code><code class="token punctuation">:</code> <code class="token number">300</code><code class="token punctuation">,</code>
+  <code class="token string">"Даша"</code><code class="token punctuation">:</code> <code class="token number">250</code>
+<code class="token punctuation">}</code><code class="token punctuation">;</code>
+
+<code class="token comment">// ... ваш код выведет "Петя"</code></code><span class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></pre>
+        </div>
+      </div>
+      
+      </div><button class="task__solution" type="button">решение</button><div class="task__answer"><div class="task__answer-content"><div data-trusted="1" class="code-example" data-prism-highlighted="1">
+      <div class="codebox code-example__codebox">
+        
+        <div class="toolbar codebox__toolbar">
+          <div class="toolbar__tool">
+            <a href="https://learn.javascript.ru/object-for-in#" title="выполнить" data-action="run" class="toolbar__button toolbar__button_run"></a>
+          </div>
+          <div class="toolbar__tool">
+            <a href="https://learn.javascript.ru/object-for-in#" title="открыть в песочнице" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a>
+          </div>
+        </div>
+        <div class="codebox__code" data-code="1">
+          <pre class="line-numbers  language-javascript"><code class=" language-javascript"><code class="token string">"use strict"</code><code class="token punctuation">;</code>
+
+<code class="token keyword">var</code> salaries <code class="token operator">=</code> <code class="token punctuation">{</code>
+  <code class="token string">"Вася"</code><code class="token punctuation">:</code> <code class="token number">100</code><code class="token punctuation">,</code>
+  <code class="token string">"Петя"</code><code class="token punctuation">:</code> <code class="token number">300</code><code class="token punctuation">,</code>
+  <code class="token string">"Даша"</code><code class="token punctuation">:</code> <code class="token number">250</code>
+<code class="token punctuation">}</code><code class="token punctuation">;</code>
+
+<code class="token keyword">var</code> max <code class="token operator">=</code> <code class="token number">0</code><code class="token punctuation">;</code>
+<code class="token keyword">var</code> maxName <code class="token operator">=</code> <code class="token string">""</code><code class="token punctuation">;</code>
+<code class="token keyword">for</code> <code class="token punctuation">(</code><code class="token keyword">var</code> name <code class="token keyword">in</code> salaries<code class="token punctuation">)</code> <code class="token punctuation">{</code>
+  <code class="token keyword">if</code> <code class="token punctuation">(</code>max <code class="token operator">&lt;</code> salaries<code class="token punctuation">[</code>name<code class="token punctuation">]</code><code class="token punctuation">)</code> <code class="token punctuation">{</code>
+    max <code class="token operator">=</code> salaries<code class="token punctuation">[</code>name<code class="token punctuation">]</code><code class="token punctuation">;</code>
+    maxName <code class="token operator">=</code> name<code class="token punctuation">;</code>
+  <code class="token punctuation">}</code>
+<code class="token punctuation">}</code>
+
+<code class="token function">alert</code><code class="token punctuation">(</code> maxName <code class="token operator">||</code> <code class="token string">"нет сотрудников"</code> <code class="token punctuation">)</code><code class="token punctuation">;</code></code><span class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></pre>
+        </div>
+      </div>
+      
+      </div></div><button class="close-button task__answer-close" type="button" title="закрыть"></button></div></div></div></div><div class="task tasks__task"><div class="task__header"><div class="task__title-wrap"><h3 class="task__title"><a class="main__anchor" href="https://learn.javascript.ru/object-for-in#umnozhte-chislennye-svoystva-na-2" name="umnozhte-chislennye-svoystva-na-2">Умножьте численные свойства на 2</a></h3><a class="task__open-link" href="https://learn.javascript.ru/task/multiply-numeric" target="_blank"></a></div><div class="task__header-note"><span class="task__importance" title="Насколько эта задача важна для освоения материала, от 1 до 5">важность: 3</span></div><div class="task__content"><p>Создайте функцию <code>multiplyNumeric</code>, которая получает объект и умножает все численные свойства на 2. Например:</p>
+<div data-trusted="1" class="code-example" data-prism-highlighted="1">
+      <div class="codebox code-example__codebox">
+        
+        <div class="codebox__code" data-code="1">
+          <pre class="line-numbers  language-javascript"><code class=" language-javascript"><code class="token comment">// до вызова</code>
+<code class="token keyword">var</code> menu <code class="token operator">=</code> <code class="token punctuation">{</code>
+  width<code class="token punctuation">:</code> <code class="token number">200</code><code class="token punctuation">,</code>
+  height<code class="token punctuation">:</code> <code class="token number">300</code><code class="token punctuation">,</code>
+  title<code class="token punctuation">:</code> <code class="token string">"My menu"</code>
+<code class="token punctuation">}</code><code class="token punctuation">;</code>
+
+<code class="token function">multiplyNumeric</code><code class="token punctuation">(</code>menu<code class="token punctuation">)</code><code class="token punctuation">;</code>
+
+<code class="token comment">// после вызова</code>
+menu <code class="token operator">=</code> <code class="token punctuation">{</code>
+  width<code class="token punctuation">:</code> <code class="token number">400</code><code class="token punctuation">,</code>
+  height<code class="token punctuation">:</code> <code class="token number">600</code><code class="token punctuation">,</code>
+  title<code class="token punctuation">:</code> <code class="token string">"My menu"</code>
+<code class="token punctuation">}</code><code class="token punctuation">;</code></code><span class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></pre>
+        </div>
+      </div>
+      
+      </div><p>P.S. Для проверки на число используйте функцию:</p>
+<div data-trusted="1" class="code-example" data-prism-highlighted="1">
+      <div class="codebox code-example__codebox">
+        
+        <div class="codebox__code" data-code="1">
+          <pre class="line-numbers  language-javascript"><code class=" language-javascript"><code class="token keyword">function</code> <code class="token function">isNumeric</code><code class="token punctuation">(</code>n<code class="token punctuation">)</code> <code class="token punctuation">{</code>
+  <code class="token keyword">return</code> <code class="token operator">!</code><code class="token function">isNaN</code><code class="token punctuation">(</code><code class="token function">parseFloat</code><code class="token punctuation">(</code>n<code class="token punctuation">)</code><code class="token punctuation">)</code> <code class="token operator">&amp;&amp;</code> <code class="token function">isFinite</code><code class="token punctuation">(</code>n<code class="token punctuation">)</code>
+<code class="token punctuation">}</code></code><span class="line-numbers-rows"><span></span><span></span><span></span></span></pre>
+        </div>
+      </div>
+      
+      </div><p><a href="https://plnkr.co/edit/IlkW9sXjU1k6e06X1iQe?p=preview" target="_blank" data-plunk-id="IlkW9sXjU1k6e06X1iQe">Открыть песочницу с тестами для задачи.</a></p><button class="task__solution" type="button">решение</button><div class="task__answer"><div class="task__answer-content"><div data-trusted="1" class="code-example" data-prism-highlighted="1">
+      <div class="codebox code-example__codebox">
+        
+        <div class="toolbar codebox__toolbar">
+          <div class="toolbar__tool">
+            <a href="https://learn.javascript.ru/object-for-in#" title="выполнить" data-action="run" class="toolbar__button toolbar__button_run"></a>
+          </div>
+          <div class="toolbar__tool">
+            <a href="https://learn.javascript.ru/object-for-in#" title="открыть в песочнице" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a>
+          </div>
+        </div>
+        <div class="codebox__code" data-code="1">
+          <pre class="line-numbers  language-javascript"><code class=" language-javascript"><code class="token keyword">var</code> menu <code class="token operator">=</code> <code class="token punctuation">{</code>
+  width<code class="token punctuation">:</code> <code class="token number">200</code><code class="token punctuation">,</code>
+  height<code class="token punctuation">:</code> <code class="token number">300</code><code class="token punctuation">,</code>
+  title<code class="token punctuation">:</code> <code class="token string">"My menu"</code>
+<code class="token punctuation">}</code><code class="token punctuation">;</code>
+
+<code class="token keyword">function</code> <code class="token function">isNumeric</code><code class="token punctuation">(</code>n<code class="token punctuation">)</code> <code class="token punctuation">{</code>
+  <code class="token keyword">return</code> <code class="token operator">!</code><code class="token function">isNaN</code><code class="token punctuation">(</code><code class="token function">parseFloat</code><code class="token punctuation">(</code>n<code class="token punctuation">)</code><code class="token punctuation">)</code> <code class="token operator">&amp;&amp;</code> <code class="token function">isFinite</code><code class="token punctuation">(</code>n<code class="token punctuation">)</code><code class="token punctuation">;</code>
+<code class="token punctuation">}</code>
+
+<code class="token keyword">function</code> <code class="token function">multiplyNumeric</code><code class="token punctuation">(</code>obj<code class="token punctuation">)</code> <code class="token punctuation">{</code>
+  <code class="token keyword">for</code> <code class="token punctuation">(</code><code class="token keyword">var</code> key <code class="token keyword">in</code> obj<code class="token punctuation">)</code> <code class="token punctuation">{</code>
+    <code class="token keyword">if</code> <code class="token punctuation">(</code><code class="token function">isNumeric</code><code class="token punctuation">(</code>obj<code class="token punctuation">[</code>key<code class="token punctuation">]</code><code class="token punctuation">)</code><code class="token punctuation">)</code> <code class="token punctuation">{</code>
+      obj<code class="token punctuation">[</code>key<code class="token punctuation">]</code> <code class="token operator">*=</code> <code class="token number">2</code><code class="token punctuation">;</code>
+    <code class="token punctuation">}</code>
+  <code class="token punctuation">}</code>
+<code class="token punctuation">}</code>
+
+<code class="token function">multiplyNumeric</code><code class="token punctuation">(</code>menu<code class="token punctuation">)</code><code class="token punctuation">;</code>
+
+<code class="token function">alert</code><code class="token punctuation">(</code> <code class="token string">"menu width="</code> <code class="token operator">+</code> menu<code class="token punctuation">.</code>width <code class="token operator">+</code> <code class="token string">" height="</code> <code class="token operator">+</code> menu<code class="token punctuation">.</code>height <code class="token operator">+</code> <code class="token string">" title="</code> <code class="token operator">+</code> menu<code class="token punctuation">.</code>title <code class="token punctuation">)</code><code class="token punctuation">;</code></code><span class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></pre>
+        </div>
+      </div>
+      
+      </div><p><a href="https://plnkr.co/edit/tI6ZyBoQ5yH0niDj14c3?p=preview" target="_blank" data-plunk-id="tI6ZyBoQ5yH0niDj14c3">Открыть решение с тестами в песочнице.</a></p></div><button class="close-button task__answer-close" type="button" title="закрыть"></button></div></div></div></div></div></div><div class="page__nav-wrap"><a class="page__nav page__nav_prev" href="https://learn.javascript.ru/object" data-tooltip="Объекты как ассоциативные массивы"><span class="page__nav-text"><span class="page__nav-text-shortcut">Ctrl + <span class="page__nav-text-arr">←</span></span></span><span class="page__nav-text-alternate">Предыдущий урок</span></a><a class="page__nav page__nav_next" href="https://learn.javascript.ru/object-reference" data-tooltip="Объекты: передача по ссылке"><span class="page__nav-text"><span class="page__nav-text-shortcut">Ctrl + <span class="page__nav-text-arr">→</span></span></span><span class="page__nav-text-alternate">Следующий урок</span></a></div><div class="article-tablet-foot tablet-only"><div class="article-tablet-foot__layout"><div class="share-icons"><span class="share-icons__title">Поделиться</span><a class="share share_tw" href="https://twitter.com/share?url=https%3A%2F%2Flearn.javascript.ru%2Fobject-for-in"></a><a class="share share_fb" href="https://www.facebook.com/sharer/sharer.php?s=100&amp;p%5Burl%5D=https%3A%2F%2Flearn.javascript.ru%2Fobject-for-in"></a><a class="share share_gp" href="https://plus.google.com/share?url=https%3A%2F%2Flearn.javascript.ru%2Fobject-for-in"></a><a class="share share_vk" href="https://vkontakte.ru/share.php?url=https%3A%2F%2Flearn.javascript.ru%2Fobject-for-in"></a></div><div class="article-tablet-foot__map"><a class="map" href="https://learn.javascript.ru/tutorial/map" data-action="tutorial-map"><span class="map__text">Карта учебника</span></a></div></div></div><div class="banner-bottom" style="display: flex;"><div class="banner-bottom__text">Проводим <a href="https://learn.javascript.ru/courses">курсы по Javascript и фреймворкам</a>.</div><button class="banner-bottom__close" data-banner-close="Courses" data-banner-close-message="Эта информация больше не будет выводиться." title="не показывать"></button></div><script>!!1&&"hideBannerCourses"in localStorage||(document.querySelector(".banner-bottom").style.display="flex");</script><div class="comments formatted" id="comments"><div class="comments__header"><h2 class="comments__header-title"><a href="https://learn.javascript.ru/object-for-in#comments" name="comments">Комментарии</a></h2><div class="comments__read-before"><span class="comments__read-before-link">перед тем как писать…</span><div class="comments__read-before-popup"><div class="comments__read-before-popup-i"><ul><li>Приветствуются комментарии, содержащие дополнения и вопросы по статье, и ответы на них.</li><li>Для одной строки кода используйте тег <code>&lt;code&gt;</code>, для нескольких строк кода&nbsp;— тег <code>&lt;pre&gt;</code>, если больше 10 строк&nbsp;— ссылку на песочницу (<a href="https://plnkr.co/edit/?p=preview">plnkr</a>, <a href="http://jsbin.com/">JSBin</a>, <a href="http://codepen.io/">codepen</a>…)</li><li>Если что-то непонятно в статье&nbsp;— пишите, что именно и с какого места.</li></ul></div></div></div></div><div id="disqus_thread"></div><script>var disqus_config = function() { if (!this.page) this.page = {}; Object.assign(this.page, {"url":"https:\/\/learn.javascript.ru\/object-for-in","identifier":"\/object-for-in"}); };</script><script>var disqus_shortname = "learnjavascriptru";</script><script>var disqus_enabled = true;</script></div></main></div><div class="sidebar page__sidebar sidebar sidebar_sticky-footer" style="top: 64px;"><button class="sidebar__toggle" data-sidebar-toggle=""></button><a class="map" href="https://learn.javascript.ru/tutorial/map" data-action="tutorial-map" data-tooltip="Карта учебника"></a><div class="sidebar__inner"><div class="sidebar__content"><div class="sidebar__section"><h4 class="sidebar__section-title">Раздел</h4><nav class="sidebar__navigation"><ul class="sidebar__navigation-links"><li class="sidebar__navigation-link"><a class="sidebar__link" href="https://learn.javascript.ru/data-structures">Структуры данных</a></li></ul></nav></div><div class="sidebar__section"><h4 class="sidebar__section-title">Навигация по уроку</h4><nav class="sidebar__navigation"><ul class="sidebar__navigation-links"><li class="sidebar__navigation-link"><a class="sidebar__link" href="https://learn.javascript.ru/object-for-in#for..in">for..in</a></li><li class="sidebar__navigation-link"><a class="sidebar__link" href="https://learn.javascript.ru/object-for-in#kolichestvo-svoystv-v-obekte">Количество свойств в объекте</a></li><li class="sidebar__navigation-link"><a class="sidebar__link" href="https://learn.javascript.ru/object-for-in#v-kakom-poryadke-perebirayutsya-svoystva">В каком порядке перебираются свойства?</a></li><li class="sidebar__navigation-link"><a class="sidebar__link" href="https://learn.javascript.ru/object-for-in#itogo">Итого</a></li></ul></nav></div><div class="sidebar__section"><nav class="sidebar__navigation"><ul class="sidebar__navigation-links"><li class="sidebar__navigation-link"><a class="sidebar__link" href="https://learn.javascript.ru/object-for-in#tasks">Задачи (4)</a></li><li class="sidebar__navigation-link"><a class="sidebar__link" href="https://learn.javascript.ru/object-for-in#comments">Комментарии</a></li></ul></nav></div><div class="sidebar__section"><div class="sidebar__section-title">Поделиться</div><a class="share share_tw sidebar__share" href="https://twitter.com/share?url=https%3A%2F%2Flearn.javascript.ru%2Fobject-for-in"></a><a class="share share_fb sidebar__share" href="https://www.facebook.com/sharer/sharer.php?s=100&amp;p[url]=https%3A%2F%2Flearn.javascript.ru%2Fobject-for-in"></a><a class="share share_gp sidebar__share" href="https://plus.google.com/share?url=https%3A%2F%2Flearn.javascript.ru%2Fobject-for-in"></a><a class="share share_vk sidebar__share" href="https://vkontakte.ru/share.php?url=https%3A%2F%2Flearn.javascript.ru%2Fobject-for-in"></a></div><div class="sidebar__section"><a class="sidebar__link" href="https://github.com/iliakan/javascript-tutorial-ru/blob/master/1-js/4-data-structures/5-object-for-in/article.md">Редактировать на Github</a></div></div></div></div></div></div><div class="page-footer"><ul class="page-footer__list"><li class="page-footer__item page-footer__item_copy">©&nbsp;2007—2019&nbsp; Илья Кантор</li><li class="page-footer__item page-footer__item_contact"><a class="page-footer__link" href="https://learn.javascript.ru/about#contact-us">связаться с нами</a></li><li class="page-footer__item page-footer__item_terms"><a class="page-footer__link" href="https://learn.javascript.ru/terms">пользовательское соглашение</a></li><li class="page-footer__item page-footer__item_privacy"><a class="page-footer__link" href="https://learn.javascript.ru/privacy">политика конфиденциальности</a></li><li class="page-footer__item page-footer__item_slack"><a class="page-footer__slack" href="http://slack.javascript.ru/">slack-чат</a></li><li class="page-footer__item page-footer__item_about"><a class="page-footer__link" href="https://learn.javascript.ru/about">о проекте</a></li><li class="page-footer__item page-footer__item_source"><a class="page-footer__link" rel="nofollow" href="http://github.com/iliakan/javascript-tutorial-ru">open source</a></li></ul></div></body></html>
