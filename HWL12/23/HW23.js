@@ -26,7 +26,5 @@ window.onload = function (){
         }       
     }
 
-    window.move= move
-
     timer = setInterval(move, 700);
 }
