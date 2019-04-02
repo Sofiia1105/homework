@@ -1,0 +1,75 @@
+<!DOCTYPE HTML5>
+<html>
+<head>
+    <title>HW24</title>
+
+    <style>
+        ul{
+            list-style: none;                      
+            margin-top: 0px;
+            margin-bottom: 5px;
+        }
+
+        li{
+            display: inline;
+        }
+
+        .vrape-main{
+            width: 2%;
+        }        
+
+        .main{
+            position: relative;   
+            border: 1px solid black;         
+        }
+
+        .list{
+            width: 150px;
+            position: absolute;
+            top: 0px;  
+            display: none;      
+        }
+
+        .list > li{
+            border: 1px solid black;
+        }
+    </style>
+
+    <script src="./Pricties_24.js"></script>
+</head>
+<body>
+    <ul class="vrape-main">
+        <li class="main">
+            T1
+            <ul class="list">
+                <li>T1/1</li>
+                <li>T1/2</li>
+                <li>T1/3</li>
+                <li class="close">X</li>
+            </ul>
+        </li>
+    </ul>
+    <ul class="vrape-main">
+        <li class="main">
+                T2
+                <ul class="list">
+                    <li>T2/1</li>
+                    <li>T2/2</li>
+                    <li>T2/3</li>
+                    <li class="close">X</li>
+                </ul>
+        </li>
+    </ul>
+    <ul class="vrape-main">
+            <li class="main">
+                T3
+                <ul class="list">
+                    <li>T3/1</li>
+                    <li>T3/2</li>
+                    <li>T3/3</li>
+                    <li class="close">X</li>
+                </ul>
+            </li>
+    </ul>           
+</body>
+</html>

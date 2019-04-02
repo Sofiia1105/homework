@@ -1,0 +1,46 @@
+<!DOCTYPE HTML5>
+<html>
+<head>
+    <title>HW24</title>
+    <style>
+
+        ul {
+            list-style: none;
+            padding: 0px;
+        }
+
+        #diagram {
+            height: 150px;
+            width: 45px;
+            border: 1px solid black;
+            position: relative;
+        }
+
+        #red, #green {
+            position: absolute;
+            bottom: 0px;
+            width: 100%;
+        }
+
+        #red {
+            background-color: red;
+        }
+
+        #green {
+            background-color: green;
+        }
+    </style>
+
+    <script src="./HW24_1.js"></script>
+</head>
+<body>
+    <input type="range" id="range" />
+    <input type="number" id="number" />
+
+    <ul id="diagram">
+        <li id="red"></li>
+        <li id="green"></li>
+    </ul>
+
+</body>
+</html>
