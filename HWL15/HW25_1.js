@@ -16,7 +16,6 @@ window.onload = function () {
     let playerMove = function () {
         let e = event.keyCode;
         
-        let height = window.innerHeight - player.height;
         let width = window.innerWidth - player.width;        
 
         if (e != null && e == 32) {//Jump    
