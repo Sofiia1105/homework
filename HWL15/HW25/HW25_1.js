@@ -74,8 +74,7 @@ window.onload = function () {
             if (parseInt(bob.style.height) < player.height) {
                 event.preventDefault();
             } else {
-                bob.style.top = player.top;
-                bob.style.bottom = player.bottom;  
+                bob.style.top = player.top;                
             }
             
         }       
