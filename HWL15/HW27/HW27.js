@@ -1,32 +1,31 @@
-// Реализовать контекстное (event = contextmenu) меню. Список хранить в памяти. 
-// // Почитать про event.preventDefault()
-// Хранить в списке action - название функции которая будет
-//  выполнятся при нажатии на пункт меню из задания №1.
-///------------------------------------------------------
 window.onload = function(){
 
     let bob = document.querySelector('.bob');
+
     let player = {
         top: bob.offsetTop,
-        left: bob.offsetLeft,
         height: bob.clientHeight,
-        width: bob.clientWidth
     }
-
     let h = 300;
-    let step = 20;
-    let smallHeight = player.height * 0.6;
-    let smallWidth = player.width * 1.15;
     
     let action = {
-        'Jump': function () {
-            return alert('Jump');
+        'Jump': function () {  
+            bob.style.top = h - player.height + 'px';
+
+            setTimeout(function(){
+                bob.style.top = player.top;
+            }, 1000)
         },
         'Remove': function () {
-            return alert('Remove');
+            bob.style.display = 'none';         
         },
         'ChangeColor': function () {
-            return alert('ChangeColor');
+            r = Math.floor(Math.random() * 255);
+            g = Math.floor(Math.random() * 255);
+            b = Math.floor(Math.random() * 255);
+            a = Math.round((Math.random() * 1) * 100) / 100;
+            
+            return bob.style.backgroundColor = 'rgba(' + r + ',' + g + ',' + b + ',' + a + ')';                    
         }
     };
     
@@ -55,7 +54,7 @@ window.onload = function(){
         let checkTop =  window.innerHeight - e.clientY; 
     
         if(checkLeft > 100){
-        targetList.style.left = e.clientX + 'px';
+            targetList.style.left = e.clientX + 'px';
         }else{
             targetList.style.left = e.clientX - 100 + 'px';
         }
@@ -63,7 +62,7 @@ window.onload = function(){
         if(checkTop > 100){
             targetList.style.top = e.clientY + 'px';
         }else{
-             targetList.style.top = e.clientY - 100 + 'px';
+            targetList.style.top = e.clientY - 100 + 'px';
         }        
     
         showList();
