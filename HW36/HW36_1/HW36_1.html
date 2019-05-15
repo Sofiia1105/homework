@@ -1,0 +1,38 @@
+<!DOCTYPE HTML5>
+
+<html>
+<head>
+    <title></title>
+    <style>
+        ul {
+            list-style: none;
+        }
+    </style>
+    <script src="./HW36_1.js"></script>
+</head>
+<body>
+    <!--<ul>
+        <li class="little"><input type="radio" name="hamburger"/>маленький (50 тугриков, 20 калорий)</li>
+        <li class="big"><input type="radio" name="hamburger"/>большой (100 тугриков, 40 калорий)</li>
+    </ul>-->
+    <form>
+        <ul class="burger_type">
+            Вид гамбургера
+            <li><input type="radio" name="hamburger" class="little" />маленький (50 тугриков, 20 калорий)</li>
+
+            <li><input type="radio" name="hamburger" class="big" />большой (100 тугриков, 40 калорий)</li>
+        </ul>
+        <ul class="topping">
+            Вид начинки
+            <li><input type="radio" name="filling" class="cheese" />сыром(+ 10 тугриков, + 20 калорий)</li>
+            <li><input type="radio" name="filling" class="salad" />салатом(+ 20 тугриков, + 5 калорий)</li>
+            <li><input type="radio" name="filling" class="potato" />картофелем(+ 15 тугриков, + 10 калорий)</li>
+        </ul>
+        <ul>
+            Добавки
+            <li><input type="radio" name="topping" class="sause" />посыпать приправой (+ 15 тугриков, 0 калорий)</li>
+            <li><input type="radio" name="topping" class="mayo" />полить майонезом (+ 20 тугриков, + 5 калорий)</li>
+        </ul>
+    </form>
+</body>
+</html>
