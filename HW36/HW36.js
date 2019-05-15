@@ -7,7 +7,7 @@ class Hamburger {
 
    static get SIZE_SMALL() { 
        return { price: 50, cal: 20}
-    }
+   }
 
    static get SIZE_BIG() {
        return { price: 100, cal: 40 }
@@ -24,7 +24,6 @@ class Hamburger {
    static get STUFFING_POTATO() {
        return { price: 15, cal: 10 }
    }
-
 
    static get TOPPING_SAUCE() {
        return { price: 15, cal: 0}
@@ -46,9 +45,7 @@ class Hamburger {
 
         calArr.push(this.size.cal, this.stuffing.cal);        
 
-        calories = calArr.reduce((sum, item) => {
-            return sum + item;
-        })
+        calories = calArr.reduce((sum, item) => sum + item);
 
         return calories;
     }
